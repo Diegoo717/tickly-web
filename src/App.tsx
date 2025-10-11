@@ -1,12 +1,13 @@
-import './App.css'
+import "./App.css";
+import { Home } from "./pages/home/Home";
 
 function App() {
-
   return (
-    <>
-      <h1>Hello tickly!</h1>
-    </>
-  )
+    <div className="appContainer">
+      <div className="appBackground" />
+      <Home />
+    </div>
+  );
 }
 
-export default App
+export default App;
