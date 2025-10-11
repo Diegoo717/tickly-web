@@ -1,0 +1,48 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title{
+    font-weight: 1000;
+    font-size: 58px;
+    text-align: center;
+    letter-spacing: -3px;
+}
+
+.inputWrapper{
+    height: 15%;
+    width: 35%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inputSearch{
+    height: 45%;
+    width: 55%;
+    border: none;
+    outline: none;
+}
+
+.featured{
+    height: 50%;
+    width: 100%;
+    background-color: green;
+}
