@@ -40,7 +40,6 @@
   transform: scale(0.95);
 }
 
-/* Responsive */
 @media (min-width: 1920px) {
   .button,
   .buttonActive {

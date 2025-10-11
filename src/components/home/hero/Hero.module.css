@@ -1,48 +1,186 @@
-.container{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.content{
-    height: 60%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
+.content {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.title{
-    font-weight: 1000;
-    font-size: 58px;
-    text-align: center;
-    letter-spacing: -3px;
+.title {
+  font-weight: 1000;
+  font-size: 58px;
+  text-align: center;
+  letter-spacing: -3px;
 }
 
-.inputWrapper{
+.inputWrapper {
+  height: 15%;
+  width: 35%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inputSearch {
+  height: 45%;
+  width: 55%;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.carousel {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.carouselContent {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.carouselGroup {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  flex-shrink: 0;
+  animation: scroll 20s linear infinite;
+  padding-right: 1.5em;
+}
+
+.carouselContent {
+  display: flex;
+  height: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carouselGroup > * {
+  flex-shrink: 0;
+}
+
+@media (min-width: 1920px) {
+  .content {
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 68px;
+    letter-spacing: -3.5px;
+  }
+
+  .inputWrapper {
     height: 15%;
-    width: 35%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    max-width: 1200px;
+  }
+
+  .inputSearch {
+    font-size: 18px;
+  }
 }
 
-.inputSearch{
-    height: 45%;
-    width: 55%;
-    border: none;
-    outline: none;
+@media (max-width: 1439px) {
+  .title {
+    font-size: 48px;
+    letter-spacing: -2.5px;
+  }
+
+  .inputWrapper {
+    width: 45%;
+    height: 14%;
+  }
+
+  .inputSearch {
+    font-size: 15px;
+  }
 }
 
-.featured{
-    height: 50%;
-    width: 100%;
-    background-color: green;
+@media (max-width: 1023px) {
+  .content {
+    gap: 25px;
+  }
+
+  .title {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+
+  .inputWrapper {
+    width: 60%;
+    height: 13%;
+  }
+
+  .inputSearch {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .inputWrapper {
+    width: 80%;
+    height: 12%;
+  }
+
+  .inputSearch {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    gap: 35px;
+  }
+
+  .title {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
+
+  .inputWrapper {
+    width: 75%;
+    height: 11%;
+  }
+
+  .inputSearch {
+    font-size: 12px;
+  }
 }
