@@ -63,3 +63,138 @@
     gap: 15px;
     padding: 5px;
 }
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 2400px;
+    margin: 0 auto;
+    padding-right: 12rem;
+    padding-left: 12rem;
+  }
+
+  .title {
+    font-size: 72px;
+  }
+
+  .info {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .container {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+
+  .title {
+    font-size: 52px;
+  }
+
+  .info {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    height: auto;
+    min-height: 100vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .header {
+    height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .info {
+    font-size: 18px;
+  }
+
+  .content {
+    height: auto;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ticketContainer {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+  }
+
+  .cardsContainer {
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .header {
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .info {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .content {
+    gap: 1.5rem;
+  }
+
+  .ticketContainer {
+    max-height: 450px;
+  }
+
+  .cardsContainer {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .info {
+    font-size: 14px;
+  }
+
+  .ticketContainer {
+    max-height: 400px;
+  }
+
+  .cardsContainer {
+    gap: 12px;
+    padding: 5%;
+  }
+}

@@ -35,12 +35,11 @@
     width: 70%;
     height: 100%;
     border-radius: 0 32px 32px 0; 
-    padding-left: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 3px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 20px;
 }
 
@@ -75,7 +74,7 @@
 
 .whyThis{
     color: #7f13ec;
-    width: 60%;
+    width: 80%;
 }
 
 .skeletonText {
@@ -118,4 +117,272 @@
   font-size: 1.1rem;
   margin-right: 20px;
   white-space: nowrap;
+}
+
+@media (min-width: 1920px) {
+  .horizontalEventCard {
+    width: 75%;
+    height: 32%;
+    border-radius: 36px;
+  }
+
+  .imgContainer {
+    border-radius: 36px 0 0 36px;
+  }
+
+  .img {
+    width: 75%;
+    border-radius: 26px;
+  }
+
+  .imgSkeleton {
+    width: 75%;
+    height: 85%;
+    border-radius: 26px;
+  }
+
+  .infoContainer {
+    border-radius: 0 36px 36px 0;
+    padding-left: 15px;
+    gap: 5px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .place, .date, .whyThis {
+    font-size: 1.1rem;
+  }
+
+  .aditionalInf {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 1.3rem;
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .horizontalEventCard {
+    width: 85%;
+    height: 28%;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .img{
+    width: 70%;
+  }
+
+  .place, .date, .whyThis {
+    font-size: 0.95rem;
+  }
+
+  .aditionalInf {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 1rem;
+    margin-right: 18px;
+  }
+
+  .infoContainer{
+    padding-top: 20px;
+  }
+
+  .whyThis{
+    width: 80%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .horizontalEventCard {
+    width: 90%;
+    height: auto;
+    min-height: 140px;
+    border-radius: 28px;
+  }
+
+  .imgContainer {
+    width: 35%;
+    border-radius: 28px 0 0 28px;
+    padding-top: 10px;
+  }
+
+  .img {
+    width: 50%;
+    border-radius: 20px;
+  }
+
+  .imgSkeleton {
+    width: 75%;
+    height: 75%;
+    border-radius: 20px;
+  }
+
+  .infoContainer {
+    width: 65%;
+    border-radius: 0 28px 28px 0;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .place {
+    width: 50%;
+  }
+
+  .date {
+    width: 80%;
+  }
+
+  .aditionalInfoContainer {
+    width: 35%;
+    height: 22%;
+  }
+
+  .whyThis {
+    width: 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .horizontalEventCard {
+    width: 95%;
+    border-radius: 24px;
+    min-height: 130px;
+  }
+
+  .imgContainer {
+    width: 40%;
+    border-radius: 24px 0 0 24px;
+  }
+
+  .img {
+    width: 80%;
+    border-radius: 18px;
+  }
+
+  .imgSkeleton {
+    width: 80%;
+    height: 70%;
+    border-radius: 18px;
+  }
+
+  .infoContainer {
+    width: 60%;
+    border-radius: 0 24px 24px 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 2px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .place, .date, .whyThis {
+    font-size: 0.85rem;
+  }
+
+  .place {
+    width: 60%;
+  }
+
+  .date {
+    width: 90%;
+  }
+
+  .aditionalInfoContainer {
+    width: 40%;
+    height: 24%;
+    border-radius: 28px;
+  }
+
+  .aditionalInf {
+    font-size: 12px;
+  }
+
+  .whyThis {
+    width: 80%;
+  }
+
+  .price {
+    font-size: 0.95rem;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .horizontalEventCard {
+    width: 95%;
+    border-radius: 18px;
+    min-height: 105px;
+  }
+
+  .imgContainer {
+    border-radius: 18px 0 0 18px;
+    padding-top: 10px;
+  }
+
+  .img {
+    width: 60%;
+    border-radius: 14px;
+  }
+
+  .imgSkeleton {
+    width: 80%;
+    height: 60%;
+    border-radius: 14px;
+  }
+
+  .infoContainer {
+    border-radius: 0 18px 18px 0;
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .title {
+    font-size: 0.85rem;
+    width: 95%;
+  }
+
+  .place, .date, .whyThis {
+    font-size: 0.7rem;
+  }
+
+  .place {
+    width: 70%;
+  }
+
+  .date {
+    width: 95%;
+  }
+
+  .aditionalInfoContainer {
+    width: 42%;
+    height: 24%;
+    border-radius: 20px;
+  }
+
+  .aditionalInf {
+    font-size: 10px;
+  }
+
+  .whyThis {
+    width: 90%;
+  }
+
+  .price {
+    font-size: 0.8rem;
+    margin-right: 7px;
+  }
 }

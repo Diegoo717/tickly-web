@@ -227,30 +227,80 @@
   max-height: none !important;
 }
 
-@media (max-width: 480px) {
-  .ticketContainer {
-    max-height: 400px;
+@media (min-width: 1920px) {
+  .ticketContainer.medium {
+    max-width: 450px;
+    max-height: 560px;
   }
-  
-  .ticketInfo h3 {
-    font-size: 1.125rem;
-  }
-  
-  .ticketLocation {
-    font-size: 0.875rem !important;
+
+  .ticketContainer.large {
+    max-width: 550px;
+    max-height: 680px;
   }
 }
 
-@media (max-width: 320px) {
-  .ticketContainer {
-    max-height: 350px;
+@media (max-width: 1439px) {
+  .ticketContainer.medium {
+    max-width: 360px;
+    max-height: 460px;
   }
-  
-  .ticketLogo {
-    font-size: 0.75rem;
+
+  .ticketContainer.large {
+    max-width: 460px;
+    max-height: 580px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .ticketContainer {
+    max-width: 400px;
+    max-height: 500px;
+  }
+
+  .ticket {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ticketContainer {
+    max-width: 350px;
+    max-height: 440px;
+  }
+
+  .ticket {
+    min-height: 260px;
+  }
+
+  .ticketInfo h3 {
+    font-size: 1.25rem;
+  }
+
+  .ticketLocation {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticketContainer {
+    max-width: 210px !important;
+    max-height: 250px !important;
+  }
+
+  .ticket {
+    min-height: 190px;
   }
   
   .ticketInfo h3 {
     font-size: 1rem;
   }
+  
+  .ticketLocation {
+    font-size: 0.7rem !important;
+  }
+
+  .ticketAdmit{
+    font-size: 8px;
+  }
 }
+
