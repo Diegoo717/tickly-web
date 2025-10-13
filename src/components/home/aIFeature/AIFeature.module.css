@@ -1,0 +1,65 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 5%;
+}
+
+.header {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 1000;
+  font-size: 58px;
+  text-align: center;
+  letter-spacing: -3px;
+}
+
+.aiSpan{
+    color: #7f13ec;
+    text-shadow: #7f13ec 1px 0 10px;
+}
+
+.info {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: gray;
+}
+
+.content {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticketContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardsContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+}

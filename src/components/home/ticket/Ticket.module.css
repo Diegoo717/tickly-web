@@ -1,0 +1,256 @@
+.ticketContainer {
+  position: relative;
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  contain: layout style;
+}
+
+.ticketContainer.small {
+  max-width: 280px;
+  max-height: 350px;
+}
+
+.ticketContainer.medium {
+  max-width: 380px;
+  max-height: 480px;
+}
+
+.ticketContainer.large {
+  max-width: 480px;
+  max-height: 600px;
+}
+
+.ticket {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.ticketContainer:hover .ticket {
+  transform: rotateY(360deg);
+}
+
+.ticketContent {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+}
+
+.ticketLeft {
+  width: 67%;
+  padding: clamp(12px, 5%, 24px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px 0 0 12px;
+  position: relative;
+}
+
+.ticketLeft::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px 0 0 12px;
+  z-index: 1;
+}
+
+.ticketHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.ticketLogo {
+  color: white;
+  font-weight: 800;
+  font-size: clamp(0.875rem, 3vw, 1.25rem);
+  letter-spacing: 0.1em;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  padding: clamp(2px, 1%, 4px) clamp(4px, 2%, 8px);
+  border-radius: 4px;
+}
+
+.ticketPlus {
+  width: clamp(32px, 8vw, 40px);
+  height: clamp(32px, 8vw, 40px);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.ticketPlus svg {
+  width: clamp(16px, 4vw, 24px);
+  height: clamp(16px, 4vw, 24px);
+}
+
+.ticketInfo {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  padding: clamp(8px, 3%, 12px);
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.ticketInfo p {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-weight: 300;
+  margin: 0;
+}
+
+.ticketInfo h3 {
+  font-size: clamp(1.25rem, 5vw, 1.875rem);
+  font-weight: 700;
+  margin: 4px 0 0 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.ticketLocation {
+  font-size: clamp(0.875rem, 3vw, 1.125rem) !important;
+  font-weight: 500;
+  margin-top: clamp(4px, 1vw, 8px) !important;
+}
+
+.ticketRight {
+  width: 33%;
+  padding: clamp(8px, 3%, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-left: 2px dashed #d1d5db;
+  border-radius: 0 12px 12px 0;
+}
+
+.ticketAdmit {
+  color: #7f13ec;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  margin-top: clamp(16px, 4vw, 32px);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.ticketQr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+  flex: 1;
+  justify-content: center;
+}
+
+.qrImage {
+  width: clamp(50px, 12vw, 80px);
+  height: clamp(50px, 12vw, 80px);
+  padding: 4px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticketQr p {
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  color: #6b7280;
+  margin: 0;
+}
+
+.ticketSeat {
+  text-align: center;
+  color: #374151;
+}
+
+.ticketSeat p:first-child {
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  margin: 0;
+}
+
+.ticketSeat p:last-child {
+  font-weight: 700;
+  margin: 4px 0 0 0;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.ticketHole {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(16px, 4vw, 24px);
+  height: clamp(16px, 4vw, 24px);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.ticketHoleLeft {
+  left: clamp(-8px, -2vw, -12px);
+}
+
+.ticketHoleRight {
+  right: clamp(-8px, -2vw, -12px);
+}
+
+.asideTicket {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+@media (max-width: 480px) {
+  .ticketContainer {
+    max-height: 400px;
+  }
+  
+  .ticketInfo h3 {
+    font-size: 1.125rem;
+  }
+  
+  .ticketLocation {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .ticketContainer {
+    max-height: 350px;
+  }
+  
+  .ticketLogo {
+    font-size: 0.75rem;
+  }
+  
+  .ticketInfo h3 {
+    font-size: 1rem;
+  }
+}
