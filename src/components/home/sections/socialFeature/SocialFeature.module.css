@@ -1,0 +1,84 @@
+.socialFeatureContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.infoContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info{
+  width: 70%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.infoTitle{
+  font-weight: 1000;
+  font-size: 58px;
+  letter-spacing: -3px;
+}
+
+.infoParagraph{
+  font-size: 20px;
+  color: gray;
+}
+
+.infoFeatures{
+  width: 100%;
+  height: 40%;
+}
+
+.featureContainer{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureIcon {
+  width: 10%;
+  height: auto;
+  font-size: 40px; 
+  color: #7f13ec; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aditionalContainer{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 15px;
+}
+
+.featureTitle{
+  font-size: 20px;
+}
+
+.featureDescription{
+  font-size: 16px;
+  color: gray;
+}
+
+.chatSection {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

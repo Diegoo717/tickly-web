@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import { Button } from "../../common/buttons/Button";
-import { CarouselCard } from "../carouselCard/CarouselCard";
+import { Button } from "../../../common/buttons/Button";
+import { CarouselCard } from "../../carouselCard/CarouselCard";
 
 export const Hero = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.heroContainer}>
       <main className={styles.content}>
         <h1 className={styles.title}>
           Discover Your Next Unforgettable <br />
           Experience
         </h1>
         <div className={styles.inputWrapper}>
-          <img src="public\images\search_icon.png" alt="Search Icon" />
+          <img src="public\icons\search_icon.png" alt="Search Icon" />
           <input
             className={styles.inputSearch}
             placeholder="e.g., 'Rock concerts in New York this weekend'"
@@ -99,6 +99,6 @@ export const Hero = () => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };

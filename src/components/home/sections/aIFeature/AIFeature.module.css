@@ -1,4 +1,4 @@
-.container {
+.aiFeatureContainer {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -65,7 +65,7 @@
 }
 
 @media (min-width: 1920px) {
-  .container {
+  .aiFeatureContainer {
     max-width: 2400px;
     margin: 0 auto;
     padding-right: 12rem;
@@ -82,7 +82,7 @@
 }
 
 @media (max-width: 1439px) {
-  .container {
+  .aiFeatureContainer {
     padding-right: 4rem;
     padding-left: 4rem;
   }
@@ -97,7 +97,7 @@
 }
 
 @media (max-width: 1023px) {
-  .container {
+  .aiFeatureContainer {
     padding-right: 2rem;
     padding-left: 2rem;
     height: auto;
@@ -140,7 +140,7 @@
 }
 
 @media (max-width: 767px) {
-  .container {
+  .aiFeatureContainer {
     padding-right: 1rem;
     padding-left: 1rem;
     padding-top: 1.5rem;
@@ -175,7 +175,7 @@
 }
 
 @media (max-width: 480px) {
-  .container {
+  .aiFeatureContainer {
     padding-right: 0.75rem;
     padding-left: 0.75rem;
   }

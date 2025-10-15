@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./AIFeature.module.css";
-import Ticket from "../ticket/Ticket";
-import { HorizontalEventCard } from "../horizontalEventCard/HorizontalEventCard";
+import Ticket from "../../ticket/Ticket";
+import { HorizontalEventCard } from "../../horizontalEventCard/HorizontalEventCard";
 
 export const AIFeature = () => {
   return (
-    <div className={style.container}>
+    <section className={style.aiFeatureContainer}>
       <header className={style.header}>
         <h1 className={style.title}>
           Tickly <span className={style.aiSpan}>AI</span> - Find your event with
@@ -44,6 +44,6 @@ export const AIFeature = () => {
           <HorizontalEventCard />
         </section>
       </main>
-    </div>
+    </section>
   );
 };
