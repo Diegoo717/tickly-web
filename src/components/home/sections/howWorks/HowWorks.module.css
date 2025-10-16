@@ -1,0 +1,87 @@
+.howWorksContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title{
+  font-weight: 1000;
+  font-size: 58px;
+  letter-spacing: -3px;
+}
+
+.paragraph{
+  font-size: 20px;
+  color: gray;
+}
+
+.infoContainer{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scrollStackContainer{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  margin-bottom: 1rem;
+   flex-shrink: 0
+}
+
+.iconContainer .material-symbols-outlined {
+  font-size: 2.75rem;
+}
+
+.itemTitle {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.itemDescription {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  font-size: 20px;
+}
+
+
+.cardPurple {
+  background: linear-gradient(135deg, #3b0764 0%, #6d28d9 100%) !important;
+}
+
+.cardLavender {
+  background: linear-gradient(135deg, #5b21b6 0%, #8b5cf6 100%) !important;
+}
+
+.cardViolet {
+  background: linear-gradient(135deg, #6d28d9 0%, #a78bfa 100%) !important;
+}
+
+.cardButton {
+  background: linear-gradient(135deg, #7c3aed 0%, #c4b5fd 100%) !important;
+}

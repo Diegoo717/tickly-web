@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./SocialFeature.module.css";
-import { ChatRoom } from '../../chatRoom/ChatRoom';
+import { ChatRoom } from '../../cards/chatRoom/ChatRoom';
 
 export const SocialFeature = () => {
   return (

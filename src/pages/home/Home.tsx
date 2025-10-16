@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import { NavBar } from "../../components/common/navigation/navbar/NavBar";
 import { AIFeature } from '../../components/home/sections/aIFeature/AIFeature';
 import { SocialFeature } from '../../components/home/sections/socialFeature/SocialFeature';
+import { HowWorks } from '../../components/home/sections/howWorks/HowWorks';
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
       <Hero />
       <AIFeature />
       <SocialFeature />
+      <HowWorks />
     </>
   );
 };

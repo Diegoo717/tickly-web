@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import { Button } from "../../../common/buttons/Button";
-import { CarouselCard } from "../../carouselCard/CarouselCard";
+import { CarouselCard } from "../../cards/carouselCard/CarouselCard";
 
 export const Hero = () => {
   return (
