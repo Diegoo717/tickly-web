@@ -9,13 +9,13 @@ export const HowWorks = () => {
   return (
     <section className={style.howWorksContainer}>
       <div className={style.infoContainer}>
-        <h1 className={style.title}>How Tickly Works</h1>
+        <h1 className={style.title}>How Tickly Works<span className={style.aiSpan}>?</span></h1>
         <p className={style.paragraph}>
           Discovering your next event is as easy as 1-2-3.
         </p>
       </div>
       <div className={style.scrollStackContainer}>
-        <ScrollStack itemDistance={300}>
+        <ScrollStack itemDistance={400}>
           <ScrollStackItem itemClassName={style.cardPurple}>
             <div className={style.iconContainer}>
               <span className="material-symbols-outlined">search</span>
