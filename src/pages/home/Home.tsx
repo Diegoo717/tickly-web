@@ -5,6 +5,7 @@ import { NavBar } from "../../components/common/navigation/navbar/NavBar";
 import { AIFeature } from '../../components/home/sections/aIFeature/AIFeature';
 import { SocialFeature } from '../../components/home/sections/socialFeature/SocialFeature';
 import { HowWorks } from '../../components/home/sections/howWorks/HowWorks';
+import { Footer } from '../../components/common/navigation/footer/Footer';
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
       <AIFeature />
       <SocialFeature />
       <HowWorks />
+      <Footer />
     </>
   );
 };

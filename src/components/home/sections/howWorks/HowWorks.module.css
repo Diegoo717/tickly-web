@@ -1,45 +1,71 @@
 .howWorksContainer {
+  min-height: 100vh;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 .title {
   font-weight: 1000;
   font-size: 58px;
   letter-spacing: -3px;
+  text-align: center;
+  margin: 0;
 }
 
-.aiSpan{
-    color: #7f13ec;
-    text-shadow: #7f13ec 1px 0 10px;
+.aiSpan {
+  color: #7f13ec;
+  text-shadow: #7f13ec 1px 0 10px;
 }
 
 .paragraph {
   font-size: 20px;
   color: gray;
+  text-align: center;
+  margin: 0;
 }
 
 .infoContainer {
   width: 100%;
-  height: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.scrollStackContainer {
-  width: 100%;
-  height: 75%;
+  height: auto;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: hidden;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.cardsContainer {
+  width: 80%;
+  height: 60%;
+  position: relative;
+  overflow: visible;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  will-change: transform;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .iconContainer {
@@ -88,195 +114,4 @@
 
 .cardButton {
   background: linear-gradient(135deg, #7c3aed 0%, #c4b5fd 100%) !important;
-}
-
-@media (min-width: 1920px) {
-  .howWorksContainer {
-    max-width: 2400px;
-    margin: 0 auto;
-  }
-
-  .title {
-    font-size: 72px;
-    letter-spacing: -4px;
-  }
-
-  .paragraph {
-    font-size: 24px;
-  }
-
-  .iconContainer {
-    height: 6rem;
-    width: 6rem;
-  }
-
-  .iconContainer .material-symbols-outlined {
-    font-size: 3.5rem;
-  }
-
-  .itemTitle {
-    font-size: 42px;
-  }
-
-  .itemDescription {
-    font-size: 22px;
-    max-width: 900px;
-  }
-}
-
-@media (max-width: 1439px) {
-  .title {
-    font-size: 48px;
-    letter-spacing: -2px;
-  }
-
-  .paragraph {
-    font-size: 18px;
-  }
-
-  .iconContainer {
-    height: 4.5rem;
-    width: 4.5rem;
-  }
-
-  .iconContainer .material-symbols-outlined {
-    font-size: 2.5rem;
-  }
-
-  .itemTitle {
-    font-size: 32px;
-  }
-
-  .itemDescription {
-    font-size: 18px;
-    max-width: 700px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .title {
-    font-size: 42px;
-    letter-spacing: -2px;
-  }
-
-  .paragraph {
-    font-size: 16px;
-  }
-
-  .infoContainer {
-    height: 20%;
-    gap: 15px;
-  }
-
-  .scrollStackContainer {
-    height: 80%;
-  }
-
-  .iconContainer {
-    height: 4rem;
-    width: 4rem;
-  }
-
-  .iconContainer .material-symbols-outlined {
-    font-size: 2.25rem;
-  }
-
-  .itemTitle {
-    font-size: 28px;
-  }
-
-  .itemDescription {
-    font-size: 16px;
-    max-width: 600px;
-  }
-}
-
-@media (max-width: 767px) {
-  .howWorksContainer {
-    height: 100vh;
-  }
-
-  .title {
-    font-size: 36px;
-    letter-spacing: -1.5px;
-    text-align: center;
-  }
-
-  .paragraph {
-    font-size: 16px;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .infoContainer {
-    height: 20%;
-    padding: 1rem 0;
-    gap: 12px;
-  }
-
-  .scrollStackContainer {
-    height: 80%;
-  }
-
-  .iconContainer {
-    height: 3.5rem;
-    width: 3.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .iconContainer .material-symbols-outlined {
-    font-size: 2rem;
-  }
-
-  .itemTitle {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .itemDescription {
-    font-size: 15px;
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .howWorksContainer {
-    height: 100vh;
-  }
-
-  .title {
-    font-size: 32px;
-    letter-spacing: -1px;
-  }
-
-  .paragraph {
-    font-size: 14px;
-  }
-
-  .infoContainer {
-    height: 18%;
-  }
-
-  .scrollStackContainer {
-    height: 82%;
-  }
-
-  .iconContainer {
-    height: 3rem;
-    width: 3rem;
-  }
-
-  .iconContainer .material-symbols-outlined {
-    font-size: 1.75rem;
-  }
-
-  .itemTitle {
-    font-size: 22px;
-  }
-
-  .itemDescription {
-    font-size: 14px;
-    line-height: 1.5;
-  }
 }
