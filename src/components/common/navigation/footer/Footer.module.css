@@ -123,3 +123,246 @@
   width: auto;
 }
 
+@media (min-width: 1920px) {
+  .footer {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .container {
+    max-width: 2400px;
+    padding: 0 12rem;
+  }
+
+  .grid {
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .logoImg {
+    width: 9%;
+  }
+
+  .brandTitle {
+    font-size: 1.875rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .columnTitle {
+    font-size: 1.25rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
+
+  .bottomBar {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+  }
+
+  .copyright {
+    font-size: 1rem;
+  }
+
+  .paymentImg {
+    height: 28px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .footer {
+    padding-top: 3.5rem;
+  }
+
+  .container {
+    padding: 0 4rem;
+  }
+
+  .grid {
+    gap: 2.5rem;
+  }
+
+  .logoImg {
+    width: 12%;
+  }
+
+  .brandTitle {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    padding-top: 3rem;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    max-width: 400px;
+  }
+
+  .logoImg {
+    width: 50px;
+  }
+
+  .brandTitle {
+    font-size: 1.25rem;
+  }
+
+  .column {
+    gap: 0.75rem;
+  }
+
+  .bottomBar {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .brandHeader {
+    justify-content: center;
+  }
+
+  .logoImg {
+    width: 40px;
+  }
+
+  .brandTitle {
+    font-size: 1.125rem;
+  }
+
+  .description {
+    font-size: 0.8125rem;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .column {
+    text-align: center;
+  }
+
+  .bottomBar {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 0.8125rem;
+  }
+
+  .paymentImg {
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-top: 1.5rem;
+    height: auto;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .brandHeader {
+    justify-content: center;
+  }
+
+  .logoImg {
+    width: 35px;
+  }
+
+  .brandTitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+
+  .column {
+    gap: 0.5rem;
+  }
+
+  .columnTitle {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .link {
+    font-size: 0.8125rem;
+  }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bottomBar {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+
+  .paymentImg {
+    height: 18px;
+  }
+}

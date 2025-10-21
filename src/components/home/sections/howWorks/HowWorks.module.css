@@ -115,3 +115,195 @@
 .cardButton {
   background: linear-gradient(135deg, #7c3aed 0%, #c4b5fd 100%) !important;
 }
+
+@media (min-width: 1920px) {
+  .title {
+    font-size: 72px;
+  }
+
+  .paragraph {
+    font-size: 24px;
+  }
+
+  .cardsContainer {
+    width: 70%;
+  }
+
+  .itemTitle {
+    font-size: 42px;
+  }
+
+  .itemDescription {
+    font-size: 22px;
+    max-width: 1000px;
+  }
+
+  .iconContainer {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .iconContainer .material-symbols-outlined {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1439px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .paragraph {
+    font-size: 18px;
+  }
+
+  .cardsContainer {
+    width: 85%;
+  }
+
+  .card {
+    padding: 2.5rem;
+  }
+
+  .itemTitle {
+    font-size: 32px;
+  }
+
+  .itemDescription {
+    font-size: 18px;
+    max-width: 700px;
+  }
+
+  .iconContainer {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .iconContainer .material-symbols-outlined {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .infoContainer {
+    padding: 1.5rem 0;
+    gap: 15px;
+  }
+
+  .cardsContainer {
+    width: 90%;
+  }
+
+  .card {
+    padding: 2rem;
+    border-radius: 32px;
+  }
+
+  .itemTitle {
+    font-size: 28px;
+  }
+
+  .itemDescription {
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .iconContainer {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .iconContainer .material-symbols-outlined {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+    padding: 0 1rem;
+  }
+
+  .infoContainer {
+    padding: 1rem 0;
+    gap: 12px;
+  }
+
+  .cardsContainer {
+    width: 95%;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 28px;
+  }
+
+  .itemTitle {
+    font-size: 24px;
+  }
+
+  .itemDescription {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .iconContainer {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .iconContainer .material-symbols-outlined {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .cardsContainer{
+    width: 85%;
+    height: 60%;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: 0.10px;
+  }
+
+  .paragraph {
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 1.25rem;
+    border-radius: 24px;
+  }
+
+  .itemTitle {
+    font-size: 20px;
+  }
+
+  .itemDescription {
+    font-size: 13px;
+  }
+
+  .iconContainer {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .iconContainer .material-symbols-outlined {
+    font-size: 1.75rem;
+  }
+}
