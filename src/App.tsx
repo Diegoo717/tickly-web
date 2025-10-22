@@ -1,6 +1,7 @@
 import "./App.css";
 import Ribbons from "./components/common/cursor/ribbons/Ribbons";
 import { Home } from "./pages/home/Home";
+import { SignUp } from './pages/signUp/SignUp';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         offsetFactor={0.02}
       />
       <div className="appBackground" />
-      <Home />
+      {/* <Home /> */}
+      <SignUp />
     </div>
   );
 }

@@ -1,0 +1,119 @@
+import React from "react";
+import styles from "./AuthForm.module.css";
+
+export const SignUpForm = () => {
+  return (
+    <div className={styles.pageWrapper}>
+      <div className={styles.authContainer}>
+      <form className={styles.signUpForm}>
+        <div className={styles.textCenter}>
+          <div className={styles.logoContainer}>
+            <div className={styles.logo}>
+              <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path>
+              </svg>
+            </div>
+          </div>
+          <h1 className={styles.title}>Create your Account</h1>
+          <p className={styles.subtitle}>Join the Tickly community and never miss an event.</p>
+        </div>
+
+        <div className={styles.formContent}>
+          <div className={styles.gridContainer}>
+            <div>
+              <label className={styles.label} htmlFor="first-name">First Name</label>
+              <div className={styles.inputWrapper}>
+                <span className={`material-symbols-outlined ${styles.icon}`}>person</span>
+                <input 
+                  className={`${styles.input} ${styles.inputWithIcon}`}
+                  id="first-name" 
+                  placeholder="John" 
+                  type="text"
+                />
+              </div>
+            </div>
+            <div>
+              <label className={styles.label} htmlFor="last-name">Last Name</label>
+              <div className={styles.inputWrapper}>
+                <input 
+                  className={styles.input}
+                  id="last-name" 
+                  placeholder="Doe" 
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label className={styles.label} htmlFor="email">Email Address</label>
+            <div className={styles.inputWrapper}>
+              <span className={`material-symbols-outlined ${styles.icon}`}>email</span>
+              <input 
+                className={`${styles.input} ${styles.inputWithIcon}`}
+                id="email" 
+                placeholder="you@example.com" 
+                type="email"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className={styles.label} htmlFor="password">Password</label>
+            <div className={styles.inputWrapper}>
+              <span className={`material-symbols-outlined ${styles.icon}`}>lock</span>
+              <input 
+                className={`${styles.input} ${styles.inputWithIcon}`}
+                id="password" 
+                placeholder="••••••••" 
+                type="password"
+              />
+            </div>
+          </div>
+
+          <div className={styles.checkboxContainer}>
+            <input 
+              className={styles.checkbox}
+              id="terms" 
+              type="checkbox"
+            />
+            <div className={styles.checkboxLabel}>
+              <label htmlFor="terms">
+                I agree to the <a className={styles.link} href="#">Terms of Service</a> and <a className={styles.link} href="#">Privacy Policy</a>.
+              </label>
+            </div>
+          </div>
+
+          <button className={styles.submitButton} type="submit">
+            <span className="material-symbols-outlined">how_to_reg</span>
+            <span>Create Account</span>
+          </button>
+        </div>
+
+        <div className={styles.divider}>
+          <div className={styles.dividerLine}></div>
+          <div className={styles.dividerText}>
+            <span>OR</span>
+          </div>
+        </div>
+
+        <button className={styles.googleButton} type="button">
+          <svg className={styles.googleIcon} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+          </svg>
+          <span>Sign In with Google</span>
+        </button>
+
+        <div className={styles.footer}>
+          <p>
+            Already have an account? <a className={styles.link} href="#">Sign in</a>
+          </p>
+        </div>
+      </form>
+      </div>
+    </div>
+  );
+};
