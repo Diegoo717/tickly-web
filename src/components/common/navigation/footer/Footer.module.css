@@ -303,14 +303,15 @@
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
   }
 
   .brand {
     grid-column: 1 / -1;
     text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   .brandHeader {
@@ -318,15 +319,15 @@
   }
 
   .logoImg {
-    width: 35px;
+    width: 32px;
   }
 
   .brandTitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .description {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 
   .socialLinks {
@@ -334,21 +335,21 @@
   }
 
   .column {
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .columnTitle {
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin-bottom: 0.25rem;
   }
 
   .link {
-    font-size: 0.8125rem;
+    font-size: 0.625rem;
   }
 
   .socialIcon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .bottomBar {
@@ -359,10 +360,10 @@
   }
 
   .copyright {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
   }
 
   .paymentImg {
-    height: 18px;
+    height: 16px;
   }
 }

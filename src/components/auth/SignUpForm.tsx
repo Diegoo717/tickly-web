@@ -5,14 +5,10 @@ export const SignUpForm = () => {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.authContainer}>
-      <form className={styles.signUpForm}>
+      <form className={styles.form}>
         <div className={styles.textCenter}>
           <div className={styles.logoContainer}>
-            <div className={styles.logo}>
-              <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"></path>
-              </svg>
-            </div>
+            <img className={styles.logoImg} src="public\images\tickly_logo.png" alt="" />
           </div>
           <h1 className={styles.title}>Create your Account</h1>
           <p className={styles.subtitle}>Join the Tickly community and never miss an event.</p>

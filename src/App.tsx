@@ -2,6 +2,7 @@ import "./App.css";
 import Ribbons from "./components/common/cursor/ribbons/Ribbons";
 import { Home } from "./pages/home/Home";
 import { SignUp } from './pages/signUp/SignUp';
+import { SignIn } from './pages/signIn/SignIn';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       />
       <div className="appBackground" />
       {/* <Home /> */}
-      <SignUp />
+      {/* <SignUp /> */}
+      <SignIn />
     </div>
   );
 }
