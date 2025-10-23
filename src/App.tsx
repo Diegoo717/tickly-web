@@ -4,6 +4,7 @@ import { Home } from "./pages/home/Home";
 import { SignUp } from './pages/signUp/SignUp';
 import { SignIn } from './pages/signIn/SignIn';
 import { About } from './pages/about/About';
+import { SellTickets } from './pages/sellTickets/SellTickets';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <Home /> */}
       {/* <SignUp /> */}
       {/* <SignIn /> */}
-      <About />
+      {/* <About /> */}
+      <SellTickets />
     </div>
   );
 }
