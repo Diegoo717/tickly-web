@@ -18,7 +18,7 @@ export const Hero = () => {
             placeholder="e.g., 'Rock concerts in New York this weekend'"
             type="text"
           />
-          <Button text="Find Events" active={true} />
+          <Button text="Find Events" active={true} link="discoverevents"/>
         </div>
       </main>
       <section className={styles.carousel}>

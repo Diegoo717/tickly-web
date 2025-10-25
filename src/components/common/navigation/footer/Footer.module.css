@@ -95,6 +95,11 @@
   color: #7f13ec;
 }
 
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 .bottomBar {
   margin-top: 3rem;
   border-top: 1px solid gray;

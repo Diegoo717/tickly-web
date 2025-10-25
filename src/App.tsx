@@ -5,6 +5,8 @@ import { SignUp } from './pages/signUp/SignUp';
 import { SignIn } from './pages/signIn/SignIn';
 import { About } from './pages/about/About';
 import { SellTickets } from './pages/sellTickets/SellTickets';
+import { appRouter } from './router/app.router';
+import { RouterProvider } from "react-router";
 
 function App() {
   return (
@@ -19,11 +21,7 @@ function App() {
         offsetFactor={0.02}
       />
       <div className="appBackground" />
-      {/* <Home /> */}
-      {/* <SignUp /> */}
-      {/* <SignIn /> */}
-      {/* <About /> */}
-      <SellTickets />
+      <RouterProvider router={appRouter}/>
     </div>
   );
 }

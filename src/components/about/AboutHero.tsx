@@ -54,7 +54,7 @@ export const AboutHero = () => {
         </div>
 
         <div className={`${styles.ctaContainer} ${styles.floatUp} ${styles.stagger3}`}>
-          <Button text="Explore Events" active={true}/>
+          <Button text="Explore Events" active={true} link="discoverevents"/>
         </div>
       </div>
     </section>

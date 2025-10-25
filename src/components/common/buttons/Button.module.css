@@ -40,6 +40,11 @@
   transform: scale(0.95);
 }
 
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (min-width: 1920px) {
   .button,
   .buttonActive {

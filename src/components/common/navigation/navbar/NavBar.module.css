@@ -37,6 +37,11 @@
   justify-content: space-around;
 }
 
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (min-width: 1920px) {
   .navBar {
     padding-left: 12rem;

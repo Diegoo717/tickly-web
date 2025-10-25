@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css'
+import { NavLink } from "react-router";
 
 export const Footer = () => {
   return (
@@ -35,15 +36,15 @@ export const Footer = () => {
 
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Explore</h3>
-            <a href="#" className={styles.link}>Browse Events</a>
+            <NavLink className={styles.navLink} to="/discoverevents"><a href="#" className={styles.link}>Browse Events</a></NavLink>
             <a href="#" className={styles.link}>Categories</a>
             <a href="#" className={styles.link}>Locations</a>
-            <a href="#" className={styles.link}>Sell Tickets</a>
+            <NavLink className={styles.navLink} to="/selltickets"><a href="#" className={styles.link}>Sell Tickets</a></NavLink>
           </div>
 
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>About</h3>
-            <a href="#" className={styles.link}>About Tickly</a>
+            <NavLink className={styles.navLink} to="about"> <a href="#" className={styles.link}>About Tickly</a></NavLink>
             <a href="#" className={styles.link}>Careers</a>
             <a href="#" className={styles.link}>Press</a>
             <a href="#" className={styles.link}>Blog</a>
