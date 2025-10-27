@@ -30,15 +30,15 @@ export const SellTicketsForm = () => {
 
   return (
     <div className={styles.formWrapper}>
-      <div className={styles.formContainer}>
-        <div className={styles.formHeader}>
-          <h1 className={styles.title}><span className={styles.aiSpan}>Sell</span> Your <span className={styles.aiSpan}>Tickets</span> with Us</h1>
+      <div className={`${styles.formContainer} ${styles.floatUp}`}>
+        <div className={`${styles.formHeader} ${styles.floatUp} ${styles.stagger1}`}>
+          <h1 className={styles.title}>Sell Your Tickets with Us</h1>
           <p className={styles.subtitle}>
             Submit your event for review. If it meets our guidelines, we'll get in touch to get you set up on our platform.
           </p>
         </div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={`${styles.form} ${styles.floatUp} ${styles.stagger2}`} onSubmit={handleSubmit}>
           <div className={styles.gridContainer}>
             <div className={styles.inputGroup}>
               <label className={styles.label} htmlFor="event-title">

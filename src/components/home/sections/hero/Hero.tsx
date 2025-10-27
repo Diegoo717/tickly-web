@@ -2,23 +2,34 @@ import React from "react";
 import styles from "./Hero.module.css";
 import { Button } from "../../../common/buttons/Button";
 import { CarouselCard } from "../../cards/carouselCard/CarouselCard";
+import SplitText from "../../../common/splitText/SplitText";
 
 export const Hero = () => {
   return (
     <section className={styles.heroContainer}>
       <main className={styles.content}>
-        <h1 className={styles.title}>
-          Discover Your Next Unforgettable <br />
-          Experience
-        </h1>
+          <SplitText
+            text={`Discover Your Next Unforgettable
+            Experience`}
+            className={styles.title}
+            delay={50}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0}
+            rootMargin="-50px"
+            textAlign="center"
+          />
         <div className={styles.inputWrapper}>
-          <img src="public\icons\search_icon.png" alt="Search Icon" />
+          <img src="/icons/search_icon.png" alt="Search Icon" />
           <input
             className={styles.inputSearch}
             placeholder="e.g., 'Rock concerts in New York this weekend'"
             type="text"
           />
-          <Button text="Find Events" active={true} link="discoverevents"/>
+          <Button text="Find Events" active={true} link="discoverevents" />
         </div>
       </main>
       <section className={styles.carousel}>

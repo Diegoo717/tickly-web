@@ -4,11 +4,11 @@ import styles from "./AuthForm.module.css";
 export const SignInForm = () => {
   return (
     <div className={styles.pageWrapper}>
-      <div className={styles.authContainer}>
+      <div className={`${styles.authContainer} ${styles.floatUp}`}>
         <form className={styles.form}>
-          <div className={styles.textCenter}>
+          <div className={`${styles.textCenter} ${styles.floatUp} ${styles.stagger1}`}>
             <div className={styles.logoContainer}>
-                <img className={styles.logoImg} src="public\images\tickly_logo.png" alt="" />
+                <img className={styles.logoImg} src="public\\images\\tickly_logo.png" alt="" />
             </div>
             <h1 className={styles.title}>Welcome Back</h1>
             <p className={styles.subtitle}>
@@ -16,7 +16,7 @@ export const SignInForm = () => {
             </p>
           </div>
 
-          <div className={styles.formContent}>
+          <div className={`${styles.formContent} ${styles.floatUp} ${styles.stagger2}`}>
             <div>
               <label className={styles.label} htmlFor="email">
                 Email Address
@@ -62,14 +62,14 @@ export const SignInForm = () => {
             </button>
           </div>
 
-          <div className={styles.divider}>
+          <div className={`${styles.divider} ${styles.floatUp} ${styles.stagger3}`}>
             <div className={styles.dividerLine}></div>
             <div className={styles.dividerText}>
               <span>OR</span>
             </div>
           </div>
 
-          <button className={styles.googleButton} type="button">
+          <button className={`${styles.googleButton} ${styles.floatUp} ${styles.stagger3}`} type="button">
             <svg
               className={styles.googleIcon}
               viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ export const SignInForm = () => {
             <span>Sign In with Google</span>
           </button>
 
-          <div className={styles.footer}>
+          <div className={`${styles.footer} ${styles.floatUp} ${styles.stagger3}`}>
             <p>
               Don´t have an account?{" "}
               <a className={styles.link} href="#">

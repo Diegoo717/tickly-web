@@ -4,17 +4,17 @@ import styles from "./AuthForm.module.css";
 export const SignUpForm = () => {
   return (
     <div className={styles.pageWrapper}>
-      <div className={styles.authContainer}>
+      <div className={`${styles.authContainer} ${styles.floatUp}`}>
       <form className={styles.form}>
-        <div className={styles.textCenter}>
+        <div className={`${styles.textCenter} ${styles.floatUp} ${styles.stagger1}`}>
           <div className={styles.logoContainer}>
-            <img className={styles.logoImg} src="public\images\tickly_logo.png" alt="" />
+            <img className={styles.logoImg} src="public\\images\\tickly_logo.png" alt="" />
           </div>
           <h1 className={styles.title}>Create your Account</h1>
           <p className={styles.subtitle}>Join the Tickly community and never miss an event.</p>
         </div>
 
-        <div className={styles.formContent}>
+        <div className={`${styles.formContent} ${styles.floatUp} ${styles.stagger2}`}>
           <div className={styles.gridContainer}>
             <div>
               <label className={styles.label} htmlFor="first-name">First Name</label>
@@ -86,14 +86,14 @@ export const SignUpForm = () => {
           </button>
         </div>
 
-        <div className={styles.divider}>
+        <div className={`${styles.divider} ${styles.floatUp} ${styles.stagger3}`}>
           <div className={styles.dividerLine}></div>
           <div className={styles.dividerText}>
             <span>OR</span>
           </div>
         </div>
 
-        <button className={styles.googleButton} type="button">
+        <button className={`${styles.googleButton} ${styles.floatUp} ${styles.stagger3}`} type="button">
           <svg className={styles.googleIcon} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
@@ -103,7 +103,7 @@ export const SignUpForm = () => {
           <span>Sign In with Google</span>
         </button>
 
-        <div className={styles.footer}>
+        <div className={`${styles.footer} ${styles.floatUp} ${styles.stagger3}`}>
           <p>
             Already have an account? <a className={styles.link} href="#">Sign in</a>
           </p>
