@@ -7,14 +7,29 @@ interface Props {
   active: boolean;
   link?: string;
   onClick?: () => void;
+  width?: string;
+  height?: string;
 }
 
-export const Button = ({ text, active, onClick, link = "" }: Props) => {
+export const Button = ({ 
+  text, 
+  active, 
+  onClick, 
+  link = "",
+  width,
+  height 
+}: Props) => {
+  const customStyle: React.CSSProperties = {
+    ...(width && { width }),
+    ...(height && { height })
+  };
+
   return (
     <NavLink className={styles.navLink} to={`/${link}`}>
       <button
         onClick={onClick}
         className={active ? styles.buttonActive : styles.button}
+        style={customStyle}
       >
         {text}
       </button>

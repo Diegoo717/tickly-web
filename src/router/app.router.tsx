@@ -4,6 +4,7 @@ import { SellTickets } from "@/pages/sellTickets/SellTickets";
 import { Home } from "@/pages/home/Home";
 import { SignIn } from "@/pages/signIn/SignIn";
 import { SignUp } from "@/pages/signUp/SignUp";
+import { FindEvents } from "@/pages/findEvents/FindEvents";
 
 export const appRouter = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ export const appRouter = createBrowserRouter([
   },
   {
     path: "/discoverevents",
-    element: <></>
+    element: <FindEvents />
   },
   {
     path: "*",

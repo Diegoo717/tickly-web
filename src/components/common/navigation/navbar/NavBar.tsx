@@ -11,7 +11,7 @@ export const NavBar = () => {
         <NavLink className={styles.navLink} to="/"><h1 className={styles.title}>Tickly</h1></NavLink>
       </div>
       <div className={styles.navSecondSection}>
-        <Button text="Events" active={false} link="discoverevent"/>
+        <Button text="Events" active={false} link="discoverevents"/>
         <Button text="Sell Tickets" active={false} link="selltickets"/>
         <Button text="About" active={false} link="about"/>
         <Button text="Sign In" active={false} link="login"/>

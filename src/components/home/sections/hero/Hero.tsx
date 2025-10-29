@@ -3,6 +3,7 @@ import styles from "./Hero.module.css";
 import { Button } from "../../../common/buttons/Button";
 import { CarouselCard } from "../../cards/carouselCard/CarouselCard";
 import SplitText from "../../../common/splitText/SplitText";
+import { EventSearchBar } from '../../../events/eventSearchBar/EventSearchBar';
 
 export const Hero = () => {
   return (
@@ -22,15 +23,7 @@ export const Hero = () => {
             rootMargin="-50px"
             textAlign="center"
           />
-        <div className={styles.inputWrapper}>
-          <img src="/icons/search_icon.png" alt="Search Icon" />
-          <input
-            className={styles.inputSearch}
-            placeholder="e.g., 'Rock concerts in New York this weekend'"
-            type="text"
-          />
-          <Button text="Find Events" active={true} link="discoverevents" />
-        </div>
+        <EventSearchBar placeHolder="e.g., 'Rock concerts in New York this weekend'" textButton="Find Events" widht={35} height={15}/>
       </main>
       <section className={styles.carousel}>
         <div className={styles.carouselContent}>

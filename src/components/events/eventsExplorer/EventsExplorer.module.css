@@ -1,0 +1,42 @@
+.mainContainer {
+  width: 100%;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventsBrowser{
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+  font-weight: 1000;
+  font-size: 58px;
+  text-align: center;
+  letter-spacing: -3px;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.eventsContainer{
+    width: 80%;
+    min-height: 65vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5%;
+    padding: 20px;
+}
