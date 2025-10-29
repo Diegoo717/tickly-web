@@ -5,13 +5,12 @@ import styles from './EventSearchBar.module.css'
 interface Props{
   placeHolder: string,
   textButton: string,
-  widht: number,
-  height: number
+  animation: boolean
 }
 
-export const EventSearchBar = ( {placeHolder, textButton, widht, height}: Props) => {
+export const EventSearchBar = ( {placeHolder, textButton, animation}: Props) => {
   return (
-    <div style={{width: `${widht}%`, height: `${height}%`}} className={styles.inputWrapper}>
+    <div className={animation ? `${styles.inputWrapper} ${styles.floatUp} ${styles.stagger2}` : styles.inputWrapper}>
       <img src="/icons/search_icon.png" alt="Search Icon" />
       <input
         className={styles.inputSearch}

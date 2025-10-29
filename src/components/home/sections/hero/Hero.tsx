@@ -23,7 +23,7 @@ export const Hero = () => {
             rootMargin="-50px"
             textAlign="center"
           />
-        <EventSearchBar placeHolder="e.g., 'Rock concerts in New York this weekend'" textButton="Find Events" widht={35} height={15}/>
+        <EventSearchBar placeHolder="e.g., 'Rock concerts in New York this weekend'" textButton="Find Events" animation={false}/>
       </main>
       <section className={styles.carousel}>
         <div className={styles.carouselContent}>

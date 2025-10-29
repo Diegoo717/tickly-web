@@ -5,14 +5,169 @@
   justify-content: space-evenly;
   border-radius: 24px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 35%;
+  height: 60px;
 }
 
 .inputSearch {
-  height: 45%;
-  width: 55%;
+  height: 35%;
+  width: 60%;
   border: none;
   outline: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 16px;
+}
+
+.inputWrapper img {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floatUp {
+  animation: floatUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.stagger1 {
+  animation-delay: 0.1s;
+}
+
+.stagger2 {
+  animation-delay: 0.2s;
+}
+
+.stagger3 {
+  animation-delay: 0.3s;
+}
+
+@media (min-width: 1920px) {
+  .inputWrapper {
+    border-radius: 28px;
+    width: 35%;
+    height: 70px;
+  }
+
+  .inputSearch {
+    font-size: 18px;
+  }
+
+  .inputWrapper img {
+    width: 28px;
+    height: 28px;
+  }
+
+}
+
+@media (max-width: 1439px) {
+  .inputWrapper {
+    border-radius: 22px;
+    width: 40%;
+    height: 55px;
+  }
+
+  .inputSearch {
+    width: 65%;
+  }
+
+  .inputWrapper img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .inputWrapper {
+    border-radius: 20px;
+    justify-content: space-between;
+    padding: 0 12px;
+    width: 70%;
+    height: 50px;
+  }
+
+  .inputSearch {
+    font-size: 14px;
+    width: 70%;
+  }
+
+  .inputWrapper img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .inputWrapper button {
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .inputWrapper {
+    border-radius: 18px;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+    width: 75%;
+    height: 48px;
+  }
+
+  .inputSearch {
+    font-size: 13px;
+    width: 75%;
+  }
+
+  .inputWrapper img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .inputWrapper button {
+    font-size: 12px;
+    padding: 7px 14px;
+    white-space: nowrap;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputWrapper {
+    border-radius: 16px;
+    padding: 0 8px;
+    gap: 6px;
+    width: 80%;
+    height: 45px;
+  }
+
+  .inputSearch {
+    font-size: 11px;
+    width: 80%;
+  }
+
+  .inputSearch::placeholder {
+    font-size: 10px;
+  }
+
+  .inputWrapper img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .inputWrapper button {
+    font-size: 10px;
+    padding: 6px 10px;
+    white-space: nowrap;
+    border-radius: 10px;
+  }
 }

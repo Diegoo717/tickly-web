@@ -205,11 +205,11 @@
   }
 
   .title {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 
   .subtitle {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 
   .cardsGrid {
@@ -219,14 +219,15 @@
 
   .card {
     padding: 1.5rem;
+    min-height: 220px;
   }
 
   .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   .cardDescription {
-    font-size: 0.875rem;
+    font-size: 0.975rem;
   }
 
   .iconBadge {
@@ -236,6 +237,12 @@
 
   .iconBadge span {
     font-size: 1.5rem;
+  }
+
+  .ctaContainer button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    min-width: 180px;
   }
 }
 
@@ -249,31 +256,33 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .subtitle {
-    font-size: 0.8125rem;
+    font-size: 1rem;
   }
 
   .cardsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    justify-items: center;
   }
 
   .card {
     padding: 2rem 1.5rem;
     min-height: 200px;
+    width: 80%;
   }
 
   .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1.7rem;
     margin-bottom: 1rem;
   }
 
   .cardDescription {
-    font-size: 0.9375rem;
+    font-size: 1.2rem;
     line-height: 1.65;
   }
 
@@ -393,5 +402,9 @@
 
   .iconBadge span {
     font-size: 1.25rem;
+  }
+
+  .ctaContainer button {
+    margin-top: 20px;
   }
 }
