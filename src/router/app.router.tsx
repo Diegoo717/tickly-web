@@ -2,8 +2,8 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { About } from '../pages/about/About';
 import { SellTickets } from "@/pages/sellTickets/SellTickets";
 import { Home } from "@/pages/home/Home";
-import { SignIn } from "@/pages/signIn/SignIn";
-import { SignUp } from "@/pages/signUp/SignUp";
+import { Login } from "@/pages/login/Login";
+import { Register } from "@/pages/register/Register";
 import { FindEvents } from "@/pages/findEvents/FindEvents";
 
 export const appRouter = createBrowserRouter([
@@ -21,11 +21,11 @@ export const appRouter = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <SignIn />
+    element: <Login />
   },
   {
     path: "/register",
-    element: <SignUp />
+    element: <Register />
   },
   {
     path: "/discoverevents",

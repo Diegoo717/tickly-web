@@ -4,6 +4,7 @@ import Ribbons from "./components/common/cursor/ribbons/Ribbons";
 import { appRouter } from './router/app.router';
 import { RouterProvider } from "react-router";
 import { Preloader } from "./components/common/preloader/Preloader";
+import { AuthProvider } from "./contexts/AuthContext"; 
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -27,23 +28,25 @@ function App() {
   };
 
   return (
-    <div className="appContainer">
-      {showPreloader && (
-        <Preloader onComplete={handlePreloaderComplete} />
-      )}
+    <AuthProvider> 
+      <div className="appContainer">
+        {showPreloader && (
+          <Preloader onComplete={handlePreloaderComplete} />
+        )}
 
-      <Ribbons
-        baseThickness={30}
-        colors={['#7f13ec', '#a855f7']}
-        speedMultiplier={0.50}
-        maxAge={500}
-        enableFade={false}
-        enableShaderEffect={true}
-        offsetFactor={0.02}
-      />
-      <div className="appBackground" />
-      <RouterProvider router={appRouter}/>
-    </div>
+        <Ribbons
+          baseThickness={30}
+          colors={['#7f13ec', '#a855f7']}
+          speedMultiplier={0.50}
+          maxAge={500}
+          enableFade={false}
+          enableShaderEffect={true}
+          offsetFactor={0.02}
+        />
+        <div className="appBackground" />
+        <RouterProvider router={appRouter}/>
+      </div>
+    </AuthProvider> 
   );
 }
 

@@ -1,20 +1,90 @@
-import React from "react";
+import React, { useState, type FormEvent } from "react";
+import { supabase } from "../../lib/supabaseClient";
 import styles from "./AuthForm.module.css";
 
 export const SignInForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleEmailLogin = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+        console.error("Error to SignIn:", error);
+      } else {
+        setError("An unknown error occurred");
+        console.error("Unknown error:", error);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          // Aqui colocaremos la logica de el login con google exitoso
+        }
+      });
+
+      if (error) throw error;
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+        console.error("Error al iniciar sesión con Google:", error);
+      } else {
+        setError("An unknown error occurred");
+        console.error("Unknown error:", error);
+      }
+      setLoading(false);
+    }
+  };
+
   return (
     <div className={styles.pageWrapper}>
       <div className={`${styles.authContainer} ${styles.floatUp}`}>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleEmailLogin}>
           <div className={`${styles.textCenter} ${styles.floatUp} ${styles.stagger1}`}>
             <div className={styles.logoContainer}>
-                <img className={styles.logoImg} src="public\\images\\tickly_logo.png" alt="" />
+              <img className={styles.logoImg} src="/images/tickly_logo.png" alt="Tickly Logo" />
             </div>
             <h1 className={styles.title}>Welcome Back</h1>
             <p className={styles.subtitle}>
-              Sign in to acces your account and tickets.
+              Sign in to access your account and tickets.
             </p>
           </div>
+
+          {error && (
+            <div className={styles.errorMessage} style={{
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              color: '#ef4444',
+              padding: '12px',
+              borderRadius: '8px',
+              marginBottom: '16px',
+              textAlign: 'center'
+            }}>
+              {error}
+            </div>
+          )}
 
           <div className={`${styles.formContent} ${styles.floatUp} ${styles.stagger2}`}>
             <div>
@@ -30,6 +100,10 @@ export const SignInForm = () => {
                   id="email"
                   placeholder="you@example.com"
                   type="email"
+                  value={email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                  required
+                  disabled={loading}
                 />
               </div>
             </div>
@@ -39,7 +113,7 @@ export const SignInForm = () => {
                 <label className={styles.label} htmlFor="password">
                   Password
                 </label>
-                <a href="#" className={styles.link}>
+                <a href="/forgot-password" className={styles.link}>
                   Forgot password?
                 </a>
               </div>
@@ -52,13 +126,23 @@ export const SignInForm = () => {
                   id="password"
                   placeholder="••••••••"
                   type="password"
+                  value={password}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                  required
+                  disabled={loading}
                 />
               </div>
             </div>
 
-            <button className={styles.submitButton} type="submit">
-              <span className="material-symbols-outlined">Login</span>
-              <span>Sign in</span>
+            <button 
+              className={styles.submitButton} 
+              type="submit"
+              disabled={loading}
+            >
+              <span className="material-symbols-outlined">
+                {loading ? 'hourglass_empty' : 'login'}
+              </span>
+              <span>{loading ? 'Signing in...' : 'Sign in'}</span>
             </button>
           </div>
 
@@ -69,7 +153,12 @@ export const SignInForm = () => {
             </div>
           </div>
 
-          <button className={`${styles.googleButton} ${styles.floatUp} ${styles.stagger3}`} type="button">
+          <button 
+            className={`${styles.googleButton} ${styles.floatUp} ${styles.stagger3}`} 
+            type="button"
+            onClick={handleGoogleLogin}
+            disabled={loading}
+          >
             <svg
               className={styles.googleIcon}
               viewBox="0 0 24 24"
@@ -97,8 +186,8 @@ export const SignInForm = () => {
 
           <div className={`${styles.footer} ${styles.floatUp} ${styles.stagger3}`}>
             <p>
-              Don´t have an account?{" "}
-              <a className={styles.link} href="#">
+              Don't have an account?{" "}
+              <a className={styles.link} href="/register">
                 Sign up
               </a>
             </p>
