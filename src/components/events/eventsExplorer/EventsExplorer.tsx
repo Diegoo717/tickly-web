@@ -2,20 +2,52 @@ import React from "react";
 import styles from "./EventsExplorer.module.css";
 import { EventSearchBar } from "../eventSearchBar/EventSearchBar";
 import { EventCard } from "../eventCard/EventCard";
+import { EventModal } from "../eventModal/EventModal";
+import {useState} from 'react';
 
 export const EventsExplorer = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
   return (
     <main className={styles.mainContainer}>
+      <EventModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        event={{
+          title: "Indie Music Festival",
+          place: "Brooklyn, NY",
+          date: "July 28, 2024",
+          image: "url_de_imagen",
+        }}
+        tickets={{
+          general: {
+            name: "General Admission",
+            description: "Standard entry to the event.",
+            price: 45.0,
+          },
+          vip: {
+            name: "VIP Pass",
+            description: "Includes front row access and a free drink.",
+            price: 95.0,
+          },
+        }}
+        fees={5.5}
+      />
       <section className={styles.eventsBrowser}>
-        <h1 className={`${styles.title} ${styles.floatUp}`}>Your Next Event Awaits</h1>
-        <p className={`${styles.subtitle} ${styles.floatUp} ${styles.stagger1}`}>
+        <h1 className={`${styles.title} ${styles.floatUp}`}>
+          Your Next Event Awaits
+        </h1>
+        <p
+          className={`${styles.subtitle} ${styles.floatUp} ${styles.stagger1}`}
+        >
           Discover personalized events with the power of AI.
         </p>
-          <EventSearchBar
-            placeHolder="Tell us what you´re looking for e.g. 'Rock concerts in LA this weekend'"
-            textButton="Find Events"
-            animation={true}
-          />
+        <EventSearchBar
+          placeHolder="Tell us what you´re looking for e.g. 'Rock concerts in LA this weekend'"
+          textButton="Find Events"
+          animation={true}
+        />
       </section>
       <section className={styles.eventsContainer}>
         <div className={`${styles.floatUp} ${styles.stagger1}`}>
@@ -29,7 +61,7 @@ export const EventsExplorer = () => {
               day: 13,
               hour: 8,
               minute: 30,
-              second: 20
+              second: 20,
             }}
           />
         </div>
@@ -44,7 +76,7 @@ export const EventsExplorer = () => {
               day: 13,
               hour: 8,
               minute: 30,
-              second: 20
+              second: 20,
             }}
           />
         </div>
@@ -59,7 +91,7 @@ export const EventsExplorer = () => {
               day: 13,
               hour: 8,
               minute: 30,
-              second: 20
+              second: 20,
             }}
           />
         </div>
@@ -74,7 +106,7 @@ export const EventsExplorer = () => {
               day: 13,
               hour: 8,
               minute: 30,
-              second: 20
+              second: 20,
             }}
           />
         </div>
