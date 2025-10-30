@@ -6,6 +6,11 @@ import { SignInForm } from '../../components/auth/SignInForm'
 import { useAuth } from '../../contexts/AuthContext' 
 
 export const Login = () => {
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const navigate = useNavigate()
   const { session, loading } = useAuth() 
 

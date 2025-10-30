@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Hero } from "../../components/home/sections/hero/Hero";
 import styles from "./Home.module.css";
 import { AIFeature } from '../../components/home/sections/aIFeature/AIFeature';
@@ -8,6 +8,11 @@ import { Footer } from '../../components/common/navigation/footer/Footer';
 import { SmartNavBar } from '../../components/common/navigation/navbar/SmartNavBar';
 
 export const Home = () => {
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   return (
     <>
       <SmartNavBar />

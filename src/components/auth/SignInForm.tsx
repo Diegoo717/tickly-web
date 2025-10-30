@@ -41,9 +41,6 @@ export const SignInForm = () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
-        options: {
-          // Aqui colocaremos la logica de el login con google exitoso
-        }
       });
 
       if (error) throw error;
