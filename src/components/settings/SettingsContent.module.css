@@ -1,0 +1,596 @@
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  min-height: calc(100vh - 6rem);
+  overflow: hidden;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  max-width: 48rem;
+  width: 100%;
+  padding: 0 2.5rem;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.settingsCard {
+  width: 100%;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.settingsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.settingItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.settingTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.settingDescription {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-top: 0.125rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0;
+}
+
+.toggle {
+  position: relative;
+  display: inline-flex;
+  height: 1.5rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-color: #e5e7eb;
+  transition: all 200ms ease-in-out;
+}
+
+.toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(127, 19, 236, 0.5);
+}
+
+.toggle:hover {
+  opacity: 0.9;
+}
+
+.toggleActive {
+  background-color: #7f13ec;
+}
+
+.toggleThumb {
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+  transform: translateX(0);
+  border-radius: 9999px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 200ms ease-in-out;
+}
+
+.toggleThumbActive {
+  transform: translateX(1.25rem);
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  width: 10rem;
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #7f13ec;
+  box-shadow: 0 0 0 3px rgba(127, 19, 236, 0.1);
+}
+
+.selectIcon {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.changeButton {
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  transition: background-color 150ms ease-in-out;
+}
+
+.changeButton:hover {
+  background-color: #e5e7eb;
+}
+
+.dangerZone {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.dangerContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.dangerIcon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.dangerInfo {
+  flex: 1;
+}
+
+.dangerTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #991b1b;
+  margin: 0 0 0.75rem 0;
+}
+
+.dangerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dangerDescription {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-top: 0.125rem;
+  max-width: 32rem;
+}
+
+.deleteButton {
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  transition: background-color 150ms ease-in-out;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floatUp {
+  animation: floatUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 1920px) {
+  .contentWrapper {
+    max-width: 60rem;
+    padding: 0 3rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .settingsCard {
+    padding: 2.5rem;
+  }
+
+  .settingsSection {
+    gap: 2rem;
+  }
+
+  .settingTitle {
+    font-size: 1.25rem;
+  }
+
+  .settingDescription {
+    font-size: 1rem;
+  }
+
+  .dangerZone {
+    padding: 2.5rem;
+  }
+
+  .dangerTitle {
+    font-size: 1.25rem;
+  }
+
+  .dangerDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1439px) {
+  .mainContainer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .contentWrapper {
+    padding: 0 1.125rem;
+  }
+
+  .headerSection {
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .settingsCard {
+    padding: 1.5rem;
+  }
+
+  .settingsSection {
+    gap: 1.25rem;
+  }
+
+  .settingTitle {
+    font-size: 1rem;
+  }
+
+  .settingDescription {
+    font-size: 0.875rem;
+  }
+
+  .dangerZone {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mainContainer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .contentWrapper {
+    padding: 0 1rem;
+    max-width: 80%;
+  }
+
+  .headerSection {
+    margin-bottom: 1.25rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .settingsCard {
+    padding: 1.75rem;
+  }
+
+  .settingsSection {
+    gap: 1.5rem;
+  }
+
+  .settingItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .settingTitle {
+    font-size: 1.125rem;
+  }
+
+  .settingDescription {
+    font-size: 0.9375rem;
+  }
+
+  .dangerZone {
+    padding: 1.75rem;
+  }
+
+  .dangerContent {
+    flex-direction: column;
+  }
+
+  .dangerTitle {
+    font-size: 1.125rem;
+  }
+
+  .dangerDescription {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .mainContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .contentWrapper {
+    padding: 0 0.875rem;
+    max-width: 100%;
+  }
+
+  .headerSection {
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .settingsCard {
+    padding: 1.25rem;
+  }
+
+  .settingsSection {
+    gap: 1rem;
+  }
+
+  .settingItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .settingTitle {
+    font-size: 0.9375rem;
+  }
+
+  .settingDescription {
+    font-size: 0.8125rem;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .changeButton {
+    width: 100%;
+  }
+
+  .dangerZone {
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .dangerContent {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .dangerIcon {
+    font-size: 1.25rem;
+  }
+
+  .dangerTitle {
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dangerSection {
+    gap: 0.5rem;
+  }
+
+  .dangerDescription {
+    font-size: 0.75rem;
+  }
+
+  .deleteButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContainer {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .contentWrapper {
+    padding: 0 0.5rem;
+    width: 90%;
+  }
+
+  .headerSection {
+    margin-bottom: 0.75rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .settingsCard {
+    padding: 1rem;
+  }
+
+  .settingsSection {
+    gap: 0.875rem;
+  }
+
+  .settingItem {
+    gap: 0.625rem;
+  }
+
+  .settingTitle {
+    font-size: 0.875rem;
+  }
+
+  .settingDescription {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .toggle {
+    height: 1.375rem;
+    width: 2.5rem;
+  }
+
+  .toggleThumb {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+
+  .toggleThumbActive {
+    transform: translateX(1.125rem);
+  }
+
+  .select {
+    padding: 0.375rem 2rem 0.375rem 0.625rem;
+    font-size: 0.8125rem;
+  }
+
+  .changeButton {
+    height: 2.25rem;
+    font-size: 0.8125rem;
+    padding: 0 1.25rem;
+  }
+
+  .dangerZone {
+    padding: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .dangerIcon {
+    font-size: 1.125rem;
+  }
+
+  .dangerTitle {
+    font-size: 0.875rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .dangerSection {
+    gap: 0.5rem;
+  }
+
+  .dangerDescription {
+    font-size: 0.6875rem;
+    line-height: 1.5;
+  }
+
+  .deleteButton {
+    height: 2.25rem;
+    font-size: 0.8125rem;
+    padding: 0 1.25rem;
+  }
+}
