@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './MyTicketCard.module.css';
+import { Button } from '../common/buttons/Button';
 
 interface TicketData {
   id: number;
@@ -29,7 +30,6 @@ export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDel
 
   return (
     <div className={`${styles.ticketCard} ${styles.floatUp} ${staggerClass}`}>
-      {/* Image Section */}
       <div className={styles.imageSection}>
         <img 
           src={ticket.imageUrl} 
@@ -43,7 +43,6 @@ export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDel
         </div>
       </div>
 
-      {/* Info Section */}
       <div className={styles.infoSection}>
         <div className={styles.infoGrid}>
           <div className={styles.infoItem}>
@@ -71,7 +70,6 @@ export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDel
         </div>
       </div>
 
-      {/* QR Code Section */}
       <div className={styles.qrSection}>
         <div className={styles.qrCodeWrapper}>
           <svg 

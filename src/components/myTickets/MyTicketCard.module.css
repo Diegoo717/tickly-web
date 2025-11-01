@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr auto;
   background-color: #fff;
-  border-radius: 0.75rem;
+  border-radius: 32px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -64,7 +64,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem 1.25rem;
-  align-items: end;
+  align-items: start;
 }
 
 .infoItem {
@@ -102,18 +102,16 @@
   background-color: #7f13ec;
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
+  border-radius: 16px;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(127, 19, 236, 0.3);
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .downloadButton:hover {
-  background-color: #6b0fd1;
-  transform: scale(1.02);
-  box-shadow: 0 6px 16px rgba(127, 19, 236, 0.4);
+  transform: scale(0.95);
 }
 
 .downloadButton .material-symbols-outlined {

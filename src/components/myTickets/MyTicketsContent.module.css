@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0; 
+  padding: 1rem 0;
 }
 
 .mainContent {
@@ -25,7 +25,7 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  max-width: 80rem;
+  max-width: 60rem;
   width: 100%;
 }
 
@@ -65,7 +65,7 @@
   }
 
   .contentWrapper {
-    max-width: 90rem;
+    max-width: 70rem;
   }
 
   .headerSection {
@@ -83,7 +83,7 @@
   }
 
   .contentWrapper {
-    max-width: 70rem;
+    max-width: 50rem;
   }
 
   .headerSection {
@@ -91,7 +91,7 @@
   }
 
   .ticketsGrid {
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 }
 
@@ -105,7 +105,7 @@
   }
 
   .contentWrapper {
-    max-width: 100%;
+    max-width: 30rem;
   }
 
   .headerSection {
@@ -131,13 +131,14 @@
   }
 
   .ticketsGrid {
-    gap: 1.25rem;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 480px) {
   .ticketsContainer {
-    padding: 1.5rem 0;
+    padding-right:1rem;
+    padding-left: 1rem;
   }
 
   .mainContent {
@@ -149,6 +150,6 @@
   }
 
   .ticketsGrid {
-    gap: 1rem;
+    gap: 2rem;
   }
 }

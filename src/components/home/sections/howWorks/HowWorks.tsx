@@ -109,7 +109,7 @@ export const HowWorks = () => {
         </div>
          
         <div className={style.card + " " + style.cardButton}>
-          <Button text="Try With a Prompt!" active={true} link="discoverevents"/>
+          <Button text="Try With a Prompt!" active={true} link="discover-events"/>
         </div>
       </div>
     </section>
