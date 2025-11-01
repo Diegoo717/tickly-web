@@ -7,6 +7,7 @@ import { Register } from "@/pages/register/Register";
 import { FindEvents } from "@/pages/findEvents/FindEvents";
 import { Settings } from "@/pages/settings/Settings";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
+import { Profile } from '../pages/profile/Profile';
 
 export const appRouter = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const appRouter = createBrowserRouter([
   {
     path: "/settings",
     element: <ProtectedRoute><Settings /></ProtectedRoute>
+  },
+  {
+    path: "/profile",
+    element: <ProtectedRoute><Profile /></ProtectedRoute>
   },
   {
     path: "*",
