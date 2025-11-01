@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SellTicketsForm.module.css';
 import { Button } from '../common/buttons/Button';
+import '../../App.css'
 
 export const SellTicketsForm = () => {
   const [formData, setFormData] = useState({
@@ -32,8 +33,8 @@ export const SellTicketsForm = () => {
     <div className={styles.formWrapper}>
       <div className={`${styles.formContainer} ${styles.floatUp}`}>
         <div className={`${styles.formHeader} ${styles.floatUp} ${styles.stagger1}`}>
-          <h1 className={styles.title}>Sell Your Tickets with Us</h1>
-          <p className={styles.subtitle}>
+          <h1 className="title">Sell Your Tickets with Us</h1>
+          <p className="subtitle">
             Submit your event for review. If it meets our guidelines, we'll get in touch to get you set up on our platform.
           </p>
         </div>

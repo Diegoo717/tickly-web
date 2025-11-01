@@ -8,6 +8,7 @@ import { FindEvents } from "@/pages/findEvents/FindEvents";
 import { Settings } from "@/pages/settings/Settings";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { Profile } from '../pages/profile/Profile';
+import { MyTickets } from '../pages/myTickets/MyTickets';
 
 export const appRouter = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const appRouter = createBrowserRouter([
     element: <About />
   },
   {
-    path: "/selltickets",
+    path: "/sell-tickets",
     element: <SellTickets />
   },
   {
@@ -31,7 +32,7 @@ export const appRouter = createBrowserRouter([
     element: <Register />
   },
   {
-    path: "/discoverevents",
+    path: "/discover-events",
     element: <FindEvents />
   },
   {
@@ -41,6 +42,9 @@ export const appRouter = createBrowserRouter([
   {
     path: "/profile",
     element: <ProtectedRoute><Profile /></ProtectedRoute>
+  },{
+    path: "/my-tickets",
+    element: <ProtectedRoute><MyTickets /></ProtectedRoute>
   },
   {
     path: "*",

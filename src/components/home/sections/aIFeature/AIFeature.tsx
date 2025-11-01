@@ -2,6 +2,7 @@ import React from "react";
 import style from "./AIFeature.module.css";
 import Ticket from "../../cards/ticket/Ticket";
 import { HorizontalEventCard } from "../../cards/horizontalEventCard/HorizontalEventCard";
+import '../../../../App.css'
 
 export const AIFeature = () => {
   return (

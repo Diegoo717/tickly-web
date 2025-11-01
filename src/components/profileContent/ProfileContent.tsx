@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ProfileContent.module.css';
+import '../../App.css'
 
 export const ProfileContent = () => {
   return (
@@ -14,8 +15,8 @@ export const ProfileContent = () => {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Q9sFfP0pTfW7JCTXw7sUNdZeWo8iLKcank65x4-mJY6mjcFB2ok8aN3I7jVy9x31EIvmIZjKXI_knUI7tnB_IsAmpJRF-OQ_EDYhmSOm18-AEJqrGxMm6JQijbCfNPWYtsNT6M5EkwrmePULAKNP-C3HeJGTFztzdX0FrjHGFk8qjzw7oPS4-rcXv4fkFsT4tU9psLBQQIf3DMuWckXt3k6e2FoR07pCZYQdlICz_yobiSvJjFjqwEiFYIcDyutyp8tCe0O_Ng"
               />
             </div>
-            <h1 className={styles.userName}>Jane Doe</h1>
-            <p className={styles.userEmail}>jane.doe@example.com</p>
+            <h1 className="title">Jane Doe</h1>
+            <p className="subtitle">jane.doe@example.com</p>
           </div>
 
           <div className={styles.infoCard}>

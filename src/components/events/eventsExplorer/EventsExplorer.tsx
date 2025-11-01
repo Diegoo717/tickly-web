@@ -3,11 +3,11 @@ import styles from "./EventsExplorer.module.css";
 import { EventSearchBar } from "../eventSearchBar/EventSearchBar";
 import { EventCard } from "../eventCard/EventCard";
 import { EventModal } from "../eventModal/EventModal";
-import {useState} from 'react';
+import { useState } from "react";
+import "../../../App.css";
 
 export const EventsExplorer = () => {
-
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <main className={styles.mainContainer}>
@@ -35,12 +35,8 @@ export const EventsExplorer = () => {
         fees={5.5}
       />
       <section className={styles.eventsBrowser}>
-        <h1 className={`${styles.title} ${styles.floatUp}`}>
-          Your Next Event Awaits
-        </h1>
-        <p
-          className={`${styles.subtitle} ${styles.floatUp} ${styles.stagger1}`}
-        >
+        <h1 className={`title ${styles.floatUp}`}>Your Next Event Awaits</h1>
+        <p className={`subtitle ${styles.floatUp} ${styles.stagger1} ${styles.subtitleEvents}`}>
           Discover personalized events with the power of AI.
         </p>
         <EventSearchBar

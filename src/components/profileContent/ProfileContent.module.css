@@ -10,10 +10,6 @@
   padding: 2rem 0;
 }
 
-:global(.dark) .profileContainer {
-  background-color: transparent;
-}
-
 .mainContent {
   position: relative;
   z-index: 10;
@@ -53,39 +49,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.userName {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #000;
-  letter-spacing: -0.025em;
-}
-
-:global(.dark) .userName {
-  color: #fff;
-}
-
-.userEmail {
-  font-size: 1.125rem;
-  color: #4b5563;
-  max-width: 48rem;
-  margin: 0 auto;
-  line-height: 1.75;
-}
-
-:global(.dark) .userEmail {
-  color: #9ca3af;
-}
-
 .infoCard {
   width: 100%;
   background-color: #fff;
   padding: 1.75rem;
   border-radius: 0.75rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-:global(.dark) .infoCard {
-  background-color: #191022;
 }
 
 .section {
@@ -106,19 +75,11 @@
   line-height: 1.5;
 }
 
-:global(.dark) .sectionTitle {
-  color: #fff;
-}
-
 .sectionDescription {
   font-size: 0.8125rem;
   color: #6b7280;
   margin-top: 0.25rem;
   line-height: 1.25;
-}
-
-:global(.dark) .sectionDescription {
-  color: #9ca3af;
 }
 
 .sectionContent {
@@ -144,10 +105,6 @@
   line-height: 1.25;
 }
 
-:global(.dark) .fieldLabel {
-  color: #9ca3af;
-}
-
 .fieldValue {
   margin-top: 0.25rem;
   display: block;
@@ -157,19 +114,11 @@
   line-height: 1.25;
 }
 
-:global(.dark) .fieldValue {
-  color: #f3f4f6;
-}
-
 .divider {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border: 0;
   border-top: 1px solid #e5e7eb;
-}
-
-:global(.dark) .divider {
-  border-top-color: #3f3f46;
 }
 
 .tagsContainer {
@@ -189,11 +138,6 @@
   line-height: 1.25;
   background-color: #e5e7eb;
   color: #374151;
-}
-
-:global(.dark) .tag {
-  background-color: #3f3f46;
-  color: #d1d5db;
 }
 
 .tagActive {
@@ -234,14 +178,6 @@
   .avatar {
     width: 8rem;
     height: 8rem;
-  }
-
-  .userName {
-    font-size: 3.5rem;
-  }
-
-  .userEmail {
-    font-size: 1.25rem;
   }
 
   .infoCard {
@@ -290,14 +226,6 @@
   .avatar {
     width: 6.5rem;
     height: 6.5rem;
-  }
-
-  .userName {
-    font-size: 2.75rem;
-  }
-
-  .userEmail {
-    font-size: 1.0625rem;
   }
 
   .infoCard {
@@ -350,14 +278,6 @@
   .avatar {
     width: 6rem;
     height: 6rem;
-  }
-
-  .userName {
-    font-size: 2.5rem;
-  }
-
-  .userEmail {
-    font-size: 1rem;
   }
 
   .infoCard {
@@ -427,14 +347,6 @@
     height: 5rem;
   }
 
-  .userName {
-    font-size: 1.75rem;
-  }
-
-  .userEmail {
-    font-size: 0.875rem;
-  }
-
   .infoCard {
     padding: 1.75rem 1.25rem;
   }
@@ -499,15 +411,6 @@
   .avatar {
     width: 4.5rem;
     height: 4.5rem;
-  }
-
-  .userName {
-    font-size: 1.5rem;
-  }
-
-  .userEmail {
-    font-size: 0.75rem;
-    line-height: 1.5;
   }
 
   .infoCard {

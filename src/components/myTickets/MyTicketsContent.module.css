@@ -1,0 +1,154 @@
+.ticketsContainer {
+  position: relative;
+  min-height: calc(100vh - 6rem);
+  width: 100%;
+  font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0; 
+}
+
+.mainContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  width: 100%;
+}
+
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.ticketsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floatUp {
+  animation: floatUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@media (min-width: 1920px) {
+  .mainContent {
+    max-width: 1440px;
+    padding: 0 3rem;
+  }
+
+  .contentWrapper {
+    max-width: 90rem;
+  }
+
+  .headerSection {
+    margin-bottom: 3.5rem;
+  }
+
+  .ticketsGrid {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 1439px) {
+  .mainContent {
+    padding: 0 2rem;
+  }
+
+  .contentWrapper {
+    max-width: 70rem;
+  }
+
+  .headerSection {
+    margin-bottom: 2.5rem;
+  }
+
+  .ticketsGrid {
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .ticketsContainer {
+    padding: 3rem 0;
+  }
+
+  .mainContent {
+    padding: 0 1.5rem;
+  }
+
+  .contentWrapper {
+    max-width: 100%;
+  }
+
+  .headerSection {
+    margin-bottom: 2rem;
+  }
+
+  .ticketsGrid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .ticketsContainer {
+    padding: 2rem 0;
+  }
+
+  .mainContent {
+    padding: 0 1rem;
+  }
+
+  .headerSection {
+    margin-bottom: 1.5rem;
+  }
+
+  .ticketsGrid {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticketsContainer {
+    padding: 1.5rem 0;
+  }
+
+  .mainContent {
+    padding: 0 0.75rem;
+  }
+
+  .headerSection {
+    margin-bottom: 1.25rem;
+  }
+
+  .ticketsGrid {
+    gap: 1rem;
+  }
+}

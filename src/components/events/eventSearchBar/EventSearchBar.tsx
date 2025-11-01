@@ -17,7 +17,7 @@ export const EventSearchBar = ( {placeHolder, textButton, animation}: Props) => 
         placeholder={placeHolder}
         type="text"
       />
-      <Button text={textButton} active={true} link="discoverevents" />
+      <Button text={textButton} active={true} link="discover-events" />
     </div>
   );
 };

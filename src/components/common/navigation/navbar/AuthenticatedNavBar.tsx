@@ -60,8 +60,8 @@ export const AuthenticatedNavBar = () => {
         </NavLink>
       </div>
       <div className={styles.navSecondSection}>
-        <Button text="Events" active={false} link="discoverevents"/>
-        <Button text="Sell Tickets" active={false} link="selltickets"/>
+        <Button text="Events" active={false} link="discover-events"/>
+        <Button text="Sell Tickets" active={false} link="sell-tickets"/>
         <Button text="My Tickets" active={false} link="my-tickets"/>
         <Button text="My Chats" active={false} link="my-chats"/>
 

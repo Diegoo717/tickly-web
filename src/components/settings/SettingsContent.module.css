@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  min-height: calc(100vh - 6rem);
-  overflow: hidden;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: calc(100vh - 6rem);
+  overflow: auto;
 }
 
 .contentWrapper {
@@ -16,61 +16,50 @@
   flex-direction: column;
   max-width: 48rem;
   width: 100%;
-  padding: 0 2.5rem;
+  padding: 0 1.5rem;
+  gap: 1rem;
 }
 
 .headerSection {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #000;
-  letter-spacing: -0.025em;
-  margin: 0;
-}
-
-.subtitle {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  color: #6b7280;
+  margin-bottom: 0.25rem;
 }
 
 .settingsCard {
   width: 100%;
   background-color: white;
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 0.75rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .settingsSection {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .settingItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .settingTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #1a1a1a;
   margin: 0;
 }
 
 .settingDescription {
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   color: #6b7280;
   margin-top: 0.125rem;
+  line-height: 1.2;
 }
 
 .divider {
@@ -82,8 +71,8 @@
 .toggle {
   position: relative;
   display: inline-flex;
-  height: 1.5rem;
-  width: 2.75rem;
+  height: 1.375rem;
+  width: 2.5rem;
   flex-shrink: 0;
   cursor: pointer;
   border-radius: 9999px;
@@ -107,8 +96,8 @@
 
 .toggleThumb {
   display: inline-block;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 1.125rem;
+  width: 1.125rem;
   transform: translateX(0);
   border-radius: 9999px;
   background-color: white;
@@ -117,7 +106,7 @@
 }
 
 .toggleThumbActive {
-  transform: translateX(1.25rem);
+  transform: translateX(1.125rem);
 }
 
 .selectWrapper {
@@ -126,13 +115,13 @@
 
 .select {
   appearance: none;
-  width: 10rem;
+  width: 8rem;
   display: block;
   border-radius: 0.5rem;
   border: 1px solid #d1d5db;
   background-color: #f9fafb;
-  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
-  font-size: 0.875rem;
+  padding: 0.375rem 2rem 0.375rem 0.625rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 150ms ease-in-out;
 }
@@ -146,27 +135,27 @@
 .selectIcon {
   position: absolute;
   top: 50%;
-  right: 0.75rem;
+  right: 0.625rem;
   transform: translateY(-50%);
   pointer-events: none;
   color: #6b7280;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .changeButton {
   display: flex;
-  min-width: 84px;
-  max-width: 480px;
+  min-width: 70px;
+  max-width: 400px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 0.5rem;
-  height: 2.5rem;
-  padding: 0 1.5rem;
+  height: 2.25rem;
+  padding: 0 1.25rem;
   background-color: #f3f4f6;
   color: #374151;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 700;
   border: none;
   transition: background-color 150ms ease-in-out;
@@ -177,24 +166,25 @@
 }
 
 .dangerZone {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   width: 100%;
   background-color: #fef2f2;
   border: 1px solid #fecaca;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 0.75rem;
+  flex-shrink: 0;
 }
 
 .dangerContent {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .dangerIcon {
   flex-shrink: 0;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
 .dangerInfo {
@@ -202,40 +192,41 @@
 }
 
 .dangerTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #991b1b;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .dangerSection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.75rem;
+  gap: 0.625rem;
 }
 
 .dangerDescription {
-  font-size: 0.8125rem;
+  font-size: 0.8rem;
   color: #6b7280;
   margin-top: 0.125rem;
   max-width: 32rem;
+  line-height: 1.3;
 }
 
 .deleteButton {
   display: flex;
-  min-width: 84px;
-  max-width: 480px;
+  min-width: 70px;
+  max-width: 400px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 0.5rem;
-  height: 2.5rem;
-  padding: 0 1.5rem;
+  height: 2.25rem;
+  padding: 0 1.25rem;
   background-color: #ef4444;
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 700;
   border: none;
   transition: background-color 150ms ease-in-out;
@@ -263,67 +254,9 @@
 
 @media (min-width: 1920px) {
   .contentWrapper {
-    max-width: 60rem;
-    padding: 0 3rem;
-  }
-
-  .title {
-    font-size: 3.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-  }
-
-  .settingsCard {
-    padding: 2.5rem;
-  }
-
-  .settingsSection {
-    gap: 2rem;
-  }
-
-  .settingTitle {
-    font-size: 1.25rem;
-  }
-
-  .settingDescription {
-    font-size: 1rem;
-  }
-
-  .dangerZone {
-    padding: 2.5rem;
-  }
-
-  .dangerTitle {
-    font-size: 1.25rem;
-  }
-
-  .dangerDescription {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 1439px) {
-  .mainContainer {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .contentWrapper {
-    padding: 0 1.125rem;
-  }
-
-  .headerSection {
-    margin-bottom: 1.5rem;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
+    max-width: 50rem;
+    padding: 0 2rem;
+    gap: 1.25rem;
   }
 
   .settingsCard {
@@ -339,98 +272,73 @@
   }
 
   .settingDescription {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
   }
 
   .dangerZone {
     padding: 1.5rem;
-    margin-top: 1.5rem;
+  }
+
+  .dangerTitle {
+    font-size: 1rem;
+  }
+
+  .dangerDescription {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1439px) {
+  .mainContainer {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .contentWrapper {
+    padding: 0 1.25rem;
+    gap: 1rem;
+  }
+
+  .headerSection {
+    margin-bottom: 0.25rem;
+  }
+
+  .settingsCard {
+    padding: 1.25rem;
+  }
+
+  .settingsSection {
+    gap: 1rem;
+  }
+
+  .settingTitle {
+    font-size: 0.95rem;
+  }
+
+  .settingDescription {
+    font-size: 0.8rem;
+  }
+
+  .dangerZone {
+    padding: 1.25rem;
+    margin-top: 0.75rem;
   }
 }
 
 @media (max-width: 1023px) {
   .mainContainer {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
   }
 
   .contentWrapper {
     padding: 0 1rem;
-    max-width: 80%;
+    max-width: 90%;
+    gap: 0.875rem;
   }
 
   .headerSection {
-    margin-bottom: 1.25rem;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 0.9375rem;
-  }
-
-  .settingsCard {
-    padding: 1.75rem;
-  }
-
-  .settingsSection {
-    gap: 1.5rem;
-  }
-
-  .settingItem {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .settingTitle {
-    font-size: 1.125rem;
-  }
-
-  .settingDescription {
-    font-size: 0.9375rem;
-  }
-
-  .dangerZone {
-    padding: 1.75rem;
-  }
-
-  .dangerContent {
-    flex-direction: column;
-  }
-
-  .dangerTitle {
-    font-size: 1.125rem;
-  }
-
-  .dangerDescription {
-    font-size: 0.9375rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .mainContainer {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .contentWrapper {
-    padding: 0 0.875rem;
-    max-width: 100%;
-  }
-
-  .headerSection {
-    margin-bottom: 1rem;
-  }
-
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 0.8125rem;
+    margin-bottom: 0.25rem;
   }
 
   .settingsCard {
@@ -448,11 +356,67 @@
   }
 
   .settingTitle {
-    font-size: 0.9375rem;
+    font-size: 0.95rem;
   }
 
   .settingDescription {
-    font-size: 0.8125rem;
+    font-size: 0.8rem;
+  }
+
+  .dangerZone {
+    padding: 1.25rem;
+  }
+
+  .dangerContent {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .dangerTitle {
+    font-size: 0.95rem;
+  }
+
+  .dangerDescription {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .mainContainer {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .contentWrapper {
+    padding: 0 0.875rem;
+    max-width: 95%;
+    gap: 0.75rem;
+  }
+
+  .headerSection {
+    margin-bottom: 0.25rem;
+  }
+
+  .settingsCard {
+    padding: 1rem;
+  }
+
+  .settingsSection {
+    gap: 0.875rem;
+  }
+
+  .settingItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .settingTitle {
+    font-size: 0.9rem;
+  }
+
+  .settingDescription {
+    font-size: 0.75rem;
   }
 
   .select {
@@ -464,22 +428,22 @@
   }
 
   .dangerZone {
-    padding: 1.25rem;
-    margin-top: 1rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
   }
 
   .dangerContent {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .dangerIcon {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   .dangerTitle {
-    font-size: 0.9375rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.375rem;
   }
 
   .dangerSection {
@@ -497,100 +461,92 @@
 
 @media (max-width: 480px) {
   .mainContainer {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
   }
 
   .contentWrapper {
-    padding: 0 0.5rem;
-    width: 90%;
-  }
-
-  .headerSection {
-    margin-bottom: 0.75rem;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .subtitle {
-    font-size: 0.75rem;
-    line-height: 1.5;
-  }
-
-  .settingsCard {
-    padding: 1rem;
-  }
-
-  .settingsSection {
-    gap: 0.875rem;
-  }
-
-  .settingItem {
+    padding: 0 0.75rem;
+    width: 98%;
     gap: 0.625rem;
   }
 
+  .headerSection {
+    margin-bottom: 0.125rem;
+  }
+
+  .settingsCard {
+    padding: 0.875rem;
+  }
+
+  .settingsSection {
+    gap: 0.75rem;
+  }
+
+  .settingItem {
+    gap: 0.375rem;
+  }
+
   .settingTitle {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
   }
 
   .settingDescription {
-    font-size: 0.75rem;
-    line-height: 1.5;
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 
   .toggle {
-    height: 1.375rem;
-    width: 2.5rem;
+    height: 1.25rem;
+    width: 2.25rem;
   }
 
   .toggleThumb {
-    height: 1.125rem;
-    width: 1.125rem;
+    height: 1rem;
+    width: 1rem;
   }
 
   .toggleThumbActive {
-    transform: translateX(1.125rem);
+    transform: translateX(1rem);
   }
 
   .select {
-    padding: 0.375rem 2rem 0.375rem 0.625rem;
-    font-size: 0.8125rem;
+    padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+    font-size: 0.75rem;
   }
 
   .changeButton {
-    height: 2.25rem;
-    font-size: 0.8125rem;
-    padding: 0 1.25rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    padding: 0 1rem;
   }
 
   .dangerZone {
-    padding: 1rem;
-    margin-top: 0.75rem;
+    padding: 0.875rem;
+    margin-top: 0.375rem;
   }
 
   .dangerIcon {
-    font-size: 1.125rem;
+    font-size: 0.9rem;
   }
 
   .dangerTitle {
-    font-size: 0.875rem;
-    margin-bottom: 0.375rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
   }
 
   .dangerSection {
-    gap: 0.5rem;
+    gap: 0.375rem;
   }
 
   .dangerDescription {
-    font-size: 0.6875rem;
-    line-height: 1.5;
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 
   .deleteButton {
-    height: 2.25rem;
-    font-size: 0.8125rem;
-    padding: 0 1.25rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    padding: 0 1rem;
   }
 }

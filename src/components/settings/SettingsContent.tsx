@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './SettingsContent.module.css';
+import '../../App.css'
 
 export const SettingsContent = () => {
   return (
@@ -8,8 +9,8 @@ export const SettingsContent = () => {
       
       <div className={`${styles.contentWrapper} ${styles.floatUp}`}>
         <div className={styles.headerSection}>
-          <h1 className={styles.title}>Settings</h1>
-          <p className={styles.subtitle}>Manage your account and preferences.</p>
+          <h1 className="title">Settings</h1>
+          <p className="subtitle">Manage your account and preferences.</p>
         </div>
 
         <div className={styles.settingsCard}>

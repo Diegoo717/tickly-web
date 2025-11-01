@@ -52,7 +52,7 @@ export const Footer = () => {
 
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Explore</h3>
-            <NavLink className={styles.link} to="/discoverevents">
+            <NavLink className={styles.link} to="/discover-events">
               Browse Events
             </NavLink>
             <a href="#" className={styles.link}>
@@ -61,7 +61,7 @@ export const Footer = () => {
             <a href="#" className={styles.link}>
               Locations
             </a>
-            <NavLink className={styles.navLink} to="/selltickets">
+            <NavLink className={styles.navLink} to="/sell-tickets">
               <a href="#" className={styles.link}>
                 Sell Tickets
               </a>

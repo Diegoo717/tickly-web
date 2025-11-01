@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './AboutHero.module.css';
 import { Button } from '../common/buttons/Button';
+import '../../App.css'
 
 export const AboutHero = () => {
   return (
     <section className={styles.section} id="about-us">
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={`${styles.title} ${styles.floatUp}`}>
+          <h2 className={`title ${styles.floatUp}`}>
             More Than Just Tickets
           </h2>
-          <p className={`${styles.subtitle} ${styles.floatUp} ${styles.stagger1}`}>
+          <p className={`subtitle ${styles.floatUp} ${styles.stagger1}`}>
             At Tickly, we're redefining the event experience. We believe that the excitement 
             should start long before the show, with a discovery process that's as thrilling 
             as the event itself.

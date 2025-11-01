@@ -9,10 +9,6 @@
   padding: 3rem 0;
 }
 
-:global(.dark) .section {
-  background-color: rgba(24, 24, 27, 0.5);
-}
-
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -23,30 +19,6 @@
 .header {
   text-align: center;
   margin-bottom: 4rem;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #000;
-  letter-spacing: -0.025em;
-  margin-bottom: 1rem;
-}
-
-:global(.dark) .title {
-  color: #fff;
-}
-
-.subtitle {
-  font-size: 1.125rem;
-  color: #4b5563;
-  max-width: 48rem;
-  margin: 0 auto;
-  line-height: 1.75;
-}
-
-:global(.dark) .subtitle {
-  color: #9ca3af;
 }
 
 .cardsGrid {
@@ -63,10 +35,6 @@
   border-radius: 0.75rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-}
-
-:global(.dark) .card {
-  background-color: #191022;
 }
 
 .card:hover {
@@ -111,18 +79,10 @@
   margin-bottom: 0.75rem;
 }
 
-:global(.dark) .cardTitle {
-  color: #fff;
-}
-
 .cardDescription {
   color: #4b5563;
   line-height: 1.625;
   font-size: 1rem;
-}
-
-:global(.dark) .cardDescription {
-  color: #9ca3af;
 }
 
 .ctaContainer {
@@ -165,14 +125,6 @@
     padding: 0 2rem;
   }
 
-  .title {
-    font-size: 3.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-  }
-
   .card {
     padding: 2.5rem;
   }
@@ -202,14 +154,6 @@
 
   .header {
     margin-bottom: 3rem;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
   }
 
   .cardsGrid {
@@ -253,14 +197,6 @@
 
   .header {
     margin-bottom: 2.5rem;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
   }
 
   .cardsGrid {
@@ -311,14 +247,6 @@
     margin-bottom: 2rem;
   }
 
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .subtitle {
-    font-size: 0.75rem;
-  }
-
   .cardsGrid {
     gap: 1.25rem;
     margin-bottom: 1.5rem;
@@ -362,15 +290,6 @@
 
   .header {
     margin-bottom: 1.5rem;
-  }
-
-  .title {
-    font-size: 1.25rem;
-  }
-
-  .subtitle {
-    font-size: 0.625rem;
-    line-height: 1.5;
   }
 
   .cardsGrid {

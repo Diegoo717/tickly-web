@@ -48,17 +48,17 @@
 }
 
 .place{
-    color: gray;
+    color: #4b5563;
     width: 40%;
 }
 
 .date{
-    color: gray;
+    color: #4b5563;
     width: 70%;
 }
 
 .aditionalInfoContainer{
-    background-color: gray;
+    background-color: #4b5563;
     width: 30%;
     height: 18%;
     display: flex;
