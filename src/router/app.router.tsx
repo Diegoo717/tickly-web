@@ -9,6 +9,7 @@ import { Settings } from "@/pages/settings/Settings";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { Profile } from '../pages/profile/Profile';
 import { MyTickets } from '../pages/myTickets/MyTickets';
+import { MyChats } from '../pages/myChats/MyChats';
 
 export const appRouter = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const appRouter = createBrowserRouter([
   },{
     path: "/my-tickets",
     element: <ProtectedRoute><MyTickets /></ProtectedRoute>
+  },
+  {
+    path: "/my-chats",
+    element: <ProtectedRoute><MyChats /></ProtectedRoute>
   },
   {
     path: "*",
