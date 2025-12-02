@@ -9,13 +9,12 @@ interface Props {
   date: DateTime;
 }
 
-interface DateTime {
+export interface DateTime {
   year: number;
   month: string;
   day: number;
   hour: number;
   minute: number;
-  second?: number;
 }
 
 export const EventCard = ({ urlImage, title, place, date }: Props) => {
