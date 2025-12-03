@@ -4,6 +4,7 @@ import axios, {
   type InternalAxiosRequestConfig,
   type AxiosResponse,
 } from "axios";
+import { supabase } from "../../lib/supabaseClient";
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: "http://localhost:3000",
@@ -14,13 +15,14 @@ const apiClient: AxiosInstance = axios.create({
 });
 
 apiClient.interceptors.request.use(
-  (config: InternalAxiosRequestConfig) => {
-    const token = localStorage.getItem("token");
+  async (config: InternalAxiosRequestConfig) => {
+    const { data: { session } } = await supabase.auth.getSession();
+    const token = session?.access_token;
+    
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
 
-    console.log("Request:", config.method?.toUpperCase(), config.url);
     return config;
   },
   (error: AxiosError) => {
@@ -30,7 +32,6 @@ apiClient.interceptors.request.use(
 
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => {
-    console.log("Response:", response.status, response.config.url);
     return response;
   },
   (error: AxiosError) => {

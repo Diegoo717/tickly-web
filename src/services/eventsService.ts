@@ -25,6 +25,8 @@ export const eventsService = {
         description: event.description,
         place: event.place,
         dateTime: DateParser(event.date, event.time),
+        date: event.date, 
+        time: event.time, 
         cost: typeof event.cost === 'string' ? parseFloat(event.cost) : event.cost, 
         source: event.source,
         imageUrl: event.imageUrl,

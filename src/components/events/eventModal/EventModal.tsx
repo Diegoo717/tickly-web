@@ -1,28 +1,43 @@
 import React, { useState } from "react";
 import styles from "./EventModal.module.css";
 import { type DateTime } from "../eventCard/EventCard";
+import { paymentsService } from "../../../services/paymentsService";
+import {
+  type PaymentIntentResponse,
+  type HandleSuccessResponse,
+} from "../../../types/payment.types";
+import { useAuth } from "../../../contexts/AuthContext";
+import {
+  validateCardForm,
+  formatCardNumber,
+  formatExpiryDate,
+  type CardValidationErrors,
+} from "../../../utils/cardValidation";
 
 interface EventModalProps {
   isOpen: boolean;
   onClose: () => void;
   event: {
+    eventId?: string; 
     title: string;
     place: string;
     date: string | DateTime;
     image: string;
+    rawDate?: string; 
+    rawTime?: string; 
   };
   tickets: {
     general: {
       name: string;
       description: string;
       price: number;
-      isFree?: boolean; 
+      isFree?: boolean;
     };
     vip: {
       name: string;
       description: string;
       price: number;
-      isFree?: boolean; 
+      isFree?: boolean;
     };
   };
   fees: number;
@@ -35,9 +50,22 @@ export const EventModal: React.FC<EventModalProps> = ({
   tickets,
   fees,
 }) => {
+  const { user } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
   const [generalCount, setGeneralCount] = useState(1);
   const [vipCount, setVipCount] = useState(0);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentIntent, setPaymentIntent] =
+    useState<PaymentIntentResponse | null>(null);
+  const [successData, setSuccessData] =
+    useState<HandleSuccessResponse | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardholderName, setCardholderName] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+  const [cvc, setCvc] = useState("");
+  const [cardErrors, setCardErrors] = useState<CardValidationErrors>({});
 
   if (!isOpen) return null;
 
@@ -59,15 +87,128 @@ export const EventModal: React.FC<EventModalProps> = ({
     generalCount * tickets.general.price + vipCount * tickets.vip.price;
   const total = subtotal + fees;
 
-  const handleNext = () => {
-    if (currentStep < 2) {
-      setCurrentStep(currentStep + 1);
+  const handleNext = async () => {
+    if (currentStep === 0) {
+      await handleCreatePaymentIntent();
+    } else if (currentStep === 1) {
+      await handleConfirmPayment();
+    }
+  };
+
+  const handleCreatePaymentIntent = async () => {
+    setIsProcessing(true);
+    setError(null);
+
+    try {
+      if (!user) {
+        throw new Error("User not authenticated. Please log in.");
+      }
+
+      const userId = user.id;
+
+      if (!event.eventId) {
+        throw new Error("Event ID is missing.");
+      }
+
+      const items = [];
+
+      for (let i = 0; i < generalCount; i++) {
+        items.push({
+          userId: userId,
+          eventId: event.eventId,
+          eventTitle: event.title,
+          eventPlace: event.place,
+          eventDate: event.rawDate || "", 
+          eventTime: event.rawTime || "", 
+          eventCost: tickets.general.price,
+          eventImageUrl: event.image,
+          vip: false,
+        });
+      }
+
+      for (let i = 0; i < vipCount; i++) {
+        items.push({
+          userId: userId,
+          eventId: event.eventId,
+          eventTitle: event.title,
+          eventPlace: event.place,
+          eventDate: event.rawDate || "",
+          eventTime: event.rawTime || "",
+          eventCost: tickets.vip.price,
+          eventImageUrl: event.image,
+          vip: true,
+        });
+      }
+
+      const response = await paymentsService.createPaymentIntent({
+        items: items,
+        amount: total,
+      });
+
+      setPaymentIntent(response);
+
+      setCurrentStep(1);
+    } catch (err: any) {
+      console.error("Error creating payment intent:", err);
+      setError(err.message || "Failed to process payment. Please try again.");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleConfirmPayment = async () => {
+    setIsProcessing(true);
+    setError(null);
+    setCardErrors({});
+
+    try {
+      const errors = validateCardForm(
+        cardNumber,
+        cardholderName,
+        expiryDate,
+        cvc
+      );
+
+      if (Object.keys(errors).length > 0) {
+        setCardErrors(errors);
+        throw new Error("Please correct the card information");
+      }
+
+      if (!paymentIntent?.paymentIntentId) {
+        throw new Error("Payment intent not found");
+      }
+
+      const confirmResponse = await paymentsService.confirmPayment(
+        paymentIntent.paymentIntentId
+      );
+
+      if (!confirmResponse.success) {
+        throw new Error("Payment confirmation failed");
+      }
+
+      const successResponse = await paymentsService.handleSuccess(
+        confirmResponse.paymentIntentId
+      );
+
+      if (!successResponse.success) {
+        throw new Error("Payment processing failed");
+      }
+
+      setSuccessData(successResponse);
+
+      setCurrentStep(2);
+    } catch (err: any) {
+      console.error("Error confirming payment:", err);
+      setError(err.message || "Failed to confirm payment. Please try again.");
+    } finally {
+      setIsProcessing(false);
     }
   };
 
   const handleBack = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
+      setError(null);
     }
   };
 
@@ -75,6 +216,14 @@ export const EventModal: React.FC<EventModalProps> = ({
     setCurrentStep(0);
     setGeneralCount(1);
     setVipCount(0);
+    setPaymentIntent(null);
+    setSuccessData(null);
+    setError(null);
+    setCardNumber("");
+    setCardholderName("");
+    setExpiryDate("");
+    setCvc("");
+    setCardErrors({});
     onClose();
   };
 
@@ -85,6 +234,39 @@ export const EventModal: React.FC<EventModalProps> = ({
   };
 
   const formattedDate = formatDate(event.date);
+
+  const handleCardNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatCardNumber(e.target.value);
+    setCardNumber(formatted);
+    if (cardErrors.cardNumber) {
+      setCardErrors({ ...cardErrors, cardNumber: undefined });
+    }
+  };
+
+  const handleCardholderNameChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setCardholderName(e.target.value);
+    if (cardErrors.cardholderName) {
+      setCardErrors({ ...cardErrors, cardholderName: undefined });
+    }
+  };
+
+  const handleExpiryDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatExpiryDate(e.target.value);
+    setExpiryDate(formatted);
+    if (cardErrors.expiryDate) {
+      setCardErrors({ ...cardErrors, expiryDate: undefined });
+    }
+  };
+
+  const handleCvcChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "").substring(0, 4);
+    setCvc(value);
+    if (cardErrors.cvc) {
+      setCardErrors({ ...cardErrors, cvc: undefined });
+    }
+  };
 
   return (
     <div className={styles.modalBackdrop} onClick={handleBackdropClick}>
@@ -146,6 +328,13 @@ export const EventModal: React.FC<EventModalProps> = ({
         </div>
 
         <div className={styles.modalContent}>
+          {error && (
+            <div className={styles.errorMessage}>
+              <span className="material-symbols-outlined">error</span>
+              <p>{error}</p>
+            </div>
+          )}
+
           {currentStep === 0 && (
             <div className={styles.stepContent}>
               <h3 className={styles.sectionTitle}>
@@ -221,6 +410,7 @@ export const EventModal: React.FC<EventModalProps> = ({
                     <span className="material-symbols-outlined">payment</span>
                     Payment Method
                   </h3>
+
                   <div className={styles.paymentMethods}>
                     <div
                       className={`${styles.paymentOption} ${styles.selected}`}
@@ -243,19 +433,59 @@ export const EventModal: React.FC<EventModalProps> = ({
                           <span className="material-symbols-outlined">
                             credit_card
                           </span>
-                          <input type="text" placeholder="Card Number" />
+                          <input
+                            type="text"
+                            placeholder="Card Number"
+                            value={cardNumber}
+                            onChange={handleCardNumberChange}
+                            className={cardErrors.cardNumber ? styles.inputError : ""}
+                          />
                         </div>
-                        <input type="text" placeholder="Cardholder Name" />
+                        {cardErrors.cardNumber && (
+                          <p className={styles.errorText}>{cardErrors.cardNumber}</p>
+                        )}
+                        <input
+                          type="text"
+                          placeholder="Cardholder Name"
+                          value={cardholderName}
+                          onChange={handleCardholderNameChange}
+                          className={cardErrors.cardholderName ? styles.inputError : ""}
+                        />
+                        {cardErrors.cardholderName && (
+                          <p className={styles.errorText}>{cardErrors.cardholderName}</p>
+                        )}
                         <div className={styles.cardDetails}>
-                          <input type="text" placeholder="MM/YY" />
+                          <div>
+                            <input
+                              type="text"
+                              placeholder="MM/YY"
+                              value={expiryDate}
+                              onChange={handleExpiryDateChange}
+                              maxLength={5}
+                              className={cardErrors.expiryDate ? styles.inputError : ""}
+                            />
+                            {cardErrors.expiryDate && (
+                              <p className={styles.errorText}>{cardErrors.expiryDate}</p>
+                            )}
+                          </div>
                           <div className={styles.cvcWrapper}>
-                            <input type="text" placeholder="CVC" />
+                            <input
+                              type="text"
+                              placeholder="CVC"
+                              value={cvc}
+                              onChange={handleCvcChange}
+                              maxLength={4}
+                              className={cardErrors.cvc ? styles.inputError : ""}
+                            />
                             <span
                               className="material-symbols-outlined"
                               title="3-4 digit code"
                             >
                               help_outline
                             </span>
+                            {cardErrors.cvc && (
+                              <p className={styles.errorText}>{cardErrors.cvc}</p>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -422,7 +652,11 @@ export const EventModal: React.FC<EventModalProps> = ({
         {currentStep < 2 && (
           <div className={styles.modalFooter}>
             {currentStep > 0 && (
-              <button className={styles.backButton} onClick={handleBack}>
+              <button
+                className={styles.backButton}
+                onClick={handleBack}
+                disabled={isProcessing}
+              >
                 Back
               </button>
             )}
@@ -431,8 +665,18 @@ export const EventModal: React.FC<EventModalProps> = ({
                 <span>Total</span>
                 <p>${total.toFixed(2)}</p>
               </div>
-              <button className={styles.nextButton} onClick={handleNext}>
-                {currentStep === 0 ? "Proceed to Payment" : "Confirm Purchase"}
+              <button
+                className={styles.nextButton}
+                onClick={handleNext}
+                disabled={
+                  isProcessing || (generalCount === 0 && vipCount === 0)
+                }
+              >
+                {isProcessing
+                  ? "Processing..."
+                  : currentStep === 0
+                  ? "Proceed to Payment"
+                  : "Confirm Purchase"}
               </button>
             </div>
           </div>

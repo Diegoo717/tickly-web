@@ -11,6 +11,22 @@
   animation: fadeIn 0.3s ease-out;
 }
 
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  color: #c00;
+  margin-bottom: 16px;
+}
+
+.errorMessage span {
+  font-size: 20px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

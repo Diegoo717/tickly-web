@@ -21,6 +21,8 @@ export interface TransformedEvent{
   description: string;
   place: string;
   dateTime: DateTime;
+  date: string; 
+  time: string;
   cost: number;
   source: string;
   imageUrl: string;
