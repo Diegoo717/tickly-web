@@ -12,12 +12,14 @@ interface Props{
 export const EventSearchBar = ( {placeHolder, textButton, animation, onSearch}: Props) => {
 
   const [inputValue, setInputValue] = useState("");
+  const [placeHold, setPlaceHold] = useState(placeHolder);
   
   const handleSearch = () =>{
     if(inputValue != ''){
       onSearch(inputValue);
+    }else{
+      setPlaceHold("Description should not be empty!!");
     }
-    console.log("Description should not be empty");
   }
 
   return (
@@ -25,7 +27,7 @@ export const EventSearchBar = ( {placeHolder, textButton, animation, onSearch}: 
       <img src="/icons/search_icon.png" alt="Search Icon" />
       <input
         className={styles.inputSearch}
-        placeholder={placeHolder}
+        placeholder={placeHold}
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
