@@ -7,4 +7,7 @@ export const ENDPOINTS = {
     CONFIRM_PAYMENT: '/stripe/confirm-payment',
     HANDLE_SUCCESS: '/stripe/handle-success',
   },
+  TICKETS: {
+    FIND_ALL: '/tickets/find-all',
+  }
 } as const;

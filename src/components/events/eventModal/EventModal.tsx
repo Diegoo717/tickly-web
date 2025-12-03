@@ -13,6 +13,7 @@ import {
   formatExpiryDate,
   type CardValidationErrors,
 } from "../../../utils/cardValidation";
+import { useNavigate } from "react-router";
 
 interface EventModalProps {
   isOpen: boolean;
@@ -66,6 +67,11 @@ export const EventModal: React.FC<EventModalProps> = ({
   const [expiryDate, setExpiryDate] = useState("");
   const [cvc, setCvc] = useState("");
   const [cardErrors, setCardErrors] = useState<CardValidationErrors>({});
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/my-tickets');
+  };
 
   if (!isOpen) return null;
 
@@ -634,7 +640,7 @@ export const EventModal: React.FC<EventModalProps> = ({
               </div>
 
               <div className={styles.confirmButtons}>
-                <button className={styles.primaryButton}>
+                <button className={styles.primaryButton} onClick={handleClick}>
                   <span className="material-symbols-outlined">
                     qr_code_scanner
                   </span>

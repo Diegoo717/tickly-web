@@ -42,6 +42,118 @@
   width: 100%;
 }
 
+.floatUp {
+  animation: floatUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.loadingContainer,
+.errorContainer,
+.emptyContainer {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 40px;
+  text-align: center;
+}
+
+.loadingContainer p,
+.errorContainer p,
+.emptyContainer p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #7f13ec;
+  margin: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.errorContainer p {
+  color: #ef4444;
+  animation: shake 0.5s ease-in-out;
+}
+
+.emptyContainer p {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.qrCodeImage {
+  width: 120px;
+  height: 120px;
+}
+
+.qrCodePlaceholder {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border-radius: 8px;
+  color: #999;
+}
+
+.loadingContainer::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(139, 92, 246, 0.2);
+  border-top-color: #8b5cf6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.errorContainer::before {
+  content: "⚠️";
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: shake 0.5s ease-in-out;
+}
+
+.emptyContainer::before {
+  content: "🔍";
+  font-size: 3rem;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
 @keyframes floatUp {
   0% {
     transform: translateY(40px);
@@ -51,11 +163,6 @@
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.floatUp {
-  animation: floatUp 0.8s ease-out forwards;
-  opacity: 0;
 }
 
 @media (min-width: 1920px) {
