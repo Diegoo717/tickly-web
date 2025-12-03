@@ -47,7 +47,7 @@ export const AuthenticatedNavBar = () => {
     }
   };
 
-  const displayName = user?.user_metadata?.first_name || 
+  const displayName = user?.user_metadata?.first_name || user?.user_metadata?.name.split(' ')[0]
                       user?.email?.split('@')[0] || 
                       'User';
 
