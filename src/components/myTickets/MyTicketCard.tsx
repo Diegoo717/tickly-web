@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './MyTicketCard.module.css';
 import { generateQRCode } from '../../utils/codeGenerators';
+import { downloadTicketAsPDF } from '../../utils/pdfGenerator';
 
 interface TicketData {
   id: number;
@@ -22,6 +23,8 @@ interface MyTicketCardProps {
 
 export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDelay = 0 }) => {
   const [qrCodeUrl, setQrCodeUrl] = useState<string>('');
+  const [isDownloading, setIsDownloading] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const loadQRCode = async () => {
@@ -32,8 +35,20 @@ export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDel
     loadQRCode();
   }, [ticket.eventId]);
 
-  const handleDownload = () => {
-    // TODO: Implement download pdf ticket
+  const handleDownload = async () => {
+    if (!cardRef.current || isDownloading) return;
+
+    setIsDownloading(true);
+    
+    try {
+      const fileName = `${ticket.eventName.replace(/\s+/g, '-')}.pdf`;
+      await downloadTicketAsPDF(cardRef.current, fileName);
+    } catch (error) {
+      console.error('Failed to download ticket:', error);
+      alert('Failed to download ticket. Please try again.');
+    } finally {
+      setIsDownloading(false);
+    }
   };
 
   const staggerClass = animationDelay === 0 ? styles.stagger1 : 
@@ -42,12 +57,16 @@ export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDel
                        styles.stagger4;
 
   return (
-    <div className={`${styles.ticketCard} ${styles.floatUp} ${staggerClass}`}>
+    <div 
+      ref={cardRef}
+      className={`${styles.ticketCard} ${styles.floatUp} ${staggerClass}`}
+    >
       <div className={styles.imageSection}>
         <img 
           src={ticket.imageUrl} 
           alt={ticket.eventName}
           className={styles.eventImage}
+          crossOrigin="anonymous"
         />
         <div className={styles.imageOverlay}></div>
         <div className={styles.imageContent}>
@@ -75,9 +94,15 @@ export const MyTicketCard: React.FC<MyTicketCardProps> = ({ ticket, animationDel
             <p className={styles.infoValue}>{ticket.orderNumber}</p>
           </div>
           <div className={styles.downloadButtonWrapper}>
-            <button onClick={handleDownload} className={styles.downloadButton}>
-              <span className="material-symbols-outlined">download</span>
-              <span>Download</span>
+            <button 
+              onClick={handleDownload} 
+              className={styles.downloadButton}
+              disabled={isDownloading || !qrCodeUrl}
+            >
+              <span className="material-symbols-outlined">
+                {isDownloading ? 'hourglass_empty' : 'download'}
+              </span>
+              <span>{isDownloading ? 'Downloading...' : 'Download'}</span>
             </button>
           </div>
         </div>
