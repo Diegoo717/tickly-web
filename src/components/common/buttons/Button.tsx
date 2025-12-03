@@ -24,15 +24,23 @@ export const Button = ({
     ...(height && { height })
   };
 
+  const buttonElement = (
+    <button
+      onClick={onClick}
+      className={active ? styles.buttonActive : styles.button}
+      style={customStyle}
+    >
+      {text}
+    </button>
+  );
+
+  if (onClick && !link) {
+    return buttonElement;
+  }
+
   return (
     <NavLink className={styles.navLink} to={`/${link}`}>
-      <button
-        onClick={onClick}
-        className={active ? styles.buttonActive : styles.button}
-        style={customStyle}
-      >
-        {text}
-      </button>
+      {buttonElement}
     </NavLink>
   );
 };

@@ -18,13 +18,14 @@ export const eventsService = {
         ENDPOINTS.EVENTS.SEARCH,
         searchData
       );
+      
       const events: TransformedEvent[] = response.data.events.map((event) => ({
         eventId: event.eventId,
         title: event.title,
         description: event.description,
         place: event.place,
         dateTime: DateParser(event.date, event.time),
-        cost: event.cost,
+        cost: typeof event.cost === 'string' ? parseFloat(event.cost) : event.cost, 
         source: event.source,
         imageUrl: event.imageUrl,
       }));

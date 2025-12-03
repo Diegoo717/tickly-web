@@ -7,6 +7,7 @@ interface Props {
   title: string;
   place: string;
   date: DateTime;
+  onViewDetails: () => void; 
 }
 
 export interface DateTime {
@@ -17,7 +18,7 @@ export interface DateTime {
   minute: number;
 }
 
-export const EventCard = ({ urlImage, title, place, date }: Props) => {
+export const EventCard = ({ urlImage, title, place, date, onViewDetails }: Props) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
@@ -45,7 +46,14 @@ export const EventCard = ({ urlImage, title, place, date }: Props) => {
           {place}
         </p>
         <div className={styles.buttonWrapper}>
-          <Button text="View details" active={true} width="210px" height="40px" />
+          <Button 
+            text="View details" 
+            active={true} 
+            width="210px" 
+            height="40px"
+            onClick={onViewDetails}
+            link="" 
+          />
         </div>
       </div>
     </div>

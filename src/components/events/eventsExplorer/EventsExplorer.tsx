@@ -9,6 +9,7 @@ import { useEvents } from "../../../hooks/useEvents";
 
 export const EventsExplorer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
   const { events, loading, error, searchEvents } = useEvents();
 
@@ -16,31 +17,64 @@ export const EventsExplorer = () => {
     await searchEvents(description);
   };
 
+  const handleViewDetails = (event: any) => {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
+  };
+
+  const calculateTicketPrices = (eventCost: number) => {
+    const baseCost = typeof eventCost === "number" ? eventCost : 0;
+
+    const generalPrice = baseCost === 0 ? 0 : baseCost;
+    const vipPrice = baseCost + 50;
+    const fees = baseCost === 0 ? 1.0 : 5.5;
+
+    return {
+      general: {
+        name: "General Admission",
+        description: "Standard entry to the event.",
+        price: generalPrice,
+        isFree: baseCost === 0,
+      },
+      vip: {
+        name: "VIP Pass",
+        description: "Includes front row access and a free drink.",
+        price: vipPrice,
+        isFree: false,
+      },
+      fees: fees,
+    };
+  };
+
   return (
     <main className={styles.mainContainer}>
-      <EventModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        event={{
-          title: "Indie Music Festival",
-          place: "Brooklyn, NY",
-          date: "July 28, 2024",
-          image: "url_de_imagen",
-        }}
-        tickets={{
-          general: {
-            name: "General Admission",
-            description: "Standard entry to the event.",
-            price: 45.0,
-          },
-          vip: {
-            name: "VIP Pass",
-            description: "Includes front row access and a free drink.",
-            price: 95.0,
-          },
-        }}
-        fees={5.5}
-      />
+      {selectedEvent &&
+        (() => {
+          const ticketData = calculateTicketPrices(
+            Number(selectedEvent.cost) || 0
+          );
+          return (
+            <EventModal
+              isOpen={isModalOpen}
+              onClose={() => {
+                setIsModalOpen(false);
+                setSelectedEvent(null);
+              }}
+              event={{
+                title: selectedEvent.title,
+                place: selectedEvent.place,
+                date: selectedEvent.dateTime || selectedEvent.date,
+                image: selectedEvent.imageUrl || selectedEvent.urlImage,
+              }}
+              tickets={{
+                general: ticketData.general,
+                vip: ticketData.vip,
+              }}
+              fees={ticketData.fees}
+            />
+          );
+        })()}
+
       <section className={styles.eventsBrowser}>
         <h1 className={`title ${styles.floatUp}`}>Your Next Event Awaits</h1>
         <p
@@ -59,7 +93,10 @@ export const EventsExplorer = () => {
       <section className={styles.eventsContainer}>
         {loading && (
           <div className={styles.loadingContainer}>
-            <p>Our powerful system is searching for events for you, please wait a moment...</p>
+            <p>
+              Our powerful system is searching for events for you, please wait a
+              moment...
+            </p>
           </div>
         )}
 
@@ -90,6 +127,7 @@ export const EventsExplorer = () => {
                     title={event.title}
                     place={event.place}
                     date={event.dateTime}
+                    onViewDetails={() => handleViewDetails(event)}
                   />
                 </div>
               );
@@ -111,6 +149,22 @@ export const EventsExplorer = () => {
                   hour: 8,
                   minute: 30,
                 }}
+                onViewDetails={() =>
+                  handleViewDetails({
+                    title: "Indie Music Festival",
+                    place: "Brooklyn, NY",
+                    dateTime: {
+                      year: 2025,
+                      month: "JUL",
+                      day: 13,
+                      hour: 8,
+                      minute: 30,
+                    },
+                    imageUrl:
+                      "https://lh3.googleusercontent.com/aida-public/AB6AXuCzOZVQm6recKYdJt3DMD2g8HareIQv2cknngOVEueQ2_gCTqR6rkW4f2eukb_6ls2ovYUqBTFt8DvtTbzadNULX8bBcGboTRFkBbgX9fHR8m-K99IQPzfNFNdUoNkeMCBHUrvae5VBFc7bBV8Wg3TrR6zaRmYZZchSteUA-z-PJfEa5v9UVRZdG8hEZfS9P-0pWw_6VKeXSrYiGpouNC7kMs0BcdBq6ua2XAViFFZ-JzlFLmnlRQRVrNsNAhWku3TlC4-6Vi91_A",
+                    cost: 45.0, 
+                  })
+                }
               />
             </div>
             <div className={`${styles.floatUp} ${styles.stagger2}`}>
@@ -125,6 +179,22 @@ export const EventsExplorer = () => {
                   hour: 8,
                   minute: 30,
                 }}
+                onViewDetails={() =>
+                  handleViewDetails({
+                    title: "DJ Snake Live",
+                    place: "Miami, FL",
+                    dateTime: {
+                      year: 2025,
+                      month: "FEB",
+                      day: 22,
+                      hour: 8,
+                      minute: 30,
+                    },
+                    imageUrl:
+                      "https://lh3.googleusercontent.com/aida-public/AB6AXuCMP3pM0ivynvq0O8SSIlw7J3a_4EvTJRve1rMsx8qlSueLcK_7RP-FV7hlqqHMxCtIekLlmHuy-jVlXqV1KJxRX1N7SVlu9jf-2QSEfT9X4-f0nC5vfqRwJoYEbaDhjoTfLLcLEG3U1g48-G04zCJbRYMoUdyCIjEXXRBf72lzeVDbG_ZWVBzdrkfxGWaoS3XU5gbcUCyTtohsqqfQOrSBB525VLWub3j_hyPRzRxpZGPZdzziVO57CYbBubdD-vfoL2WehNB5Fg",
+                    cost: 0, 
+                  })
+                }
               />
             </div>
             <div className={`${styles.floatUp} ${styles.stagger3}`}>
@@ -139,6 +209,22 @@ export const EventsExplorer = () => {
                   hour: 8,
                   minute: 30,
                 }}
+                onViewDetails={() =>
+                  handleViewDetails({
+                    title: "Electronic Dance Mania",
+                    place: "Las Vegas, NV",
+                    dateTime: {
+                      year: 2025,
+                      month: "OCT",
+                      day: 8,
+                      hour: 8,
+                      minute: 30,
+                    },
+                    imageUrl:
+                      "https://lh3.googleusercontent.com/aida-public/AB6AXuBchq9iFwmJikuaA1sOpmESMUi7L-jxbWQaAOqSCaG-Ipu7B2u26XdM4LfFOv7B0_gr9o31WPj3qLfB5kq2gh3UiF-wUi7WKCMBy7xg5aZMzufHRTqTAfSFT8z6ZTu9OZ2eMX-Hd20y78e38d3HTmH5bBtJC5pvMMla0MoU3EOKS7uhdpREiNtwr7XecIaAZESVgY8J10CbcktU09OH5A_Jhl5jXPIp5LhWTSGXHLNSHsiDxiyrpb-QHll1ojsXoIKw4sZ1szdDFA",
+                    cost: 75.0, 
+                  })
+                }
               />
             </div>
             <div className={`${styles.floatUp} ${styles.stagger4}`}>
@@ -153,6 +239,22 @@ export const EventsExplorer = () => {
                   hour: 8,
                   minute: 30,
                 }}
+                onViewDetails={() =>
+                  handleViewDetails({
+                    title: "Jazz Nights",
+                    place: "New Orleans, LA",
+                    dateTime: {
+                      year: 2025,
+                      month: "DEC",
+                      day: 17,
+                      hour: 8,
+                      minute: 30,
+                    },
+                    imageUrl:
+                      "https://lh3.googleusercontent.com/aida-public/AB6AXuDdmgcJUuMCmycODmqbH59Hc-k9RpipvEQu4LfgpSqE-OZy-BgGdaLil6vI5W7zEh_FrSrMYNyN4oeK_zzj5jATmmOm84A-35jfXeCY4t6zByfGkjSfKWXTRPi7ZWbxh7gj-feb4vbCTFOND2aAdG3Z7Z4GqB2ejwluPwIjUPaxdg_gc-v5au7FLwSt-VvQ6t2lXHQymLf5DJRI_aqpvsttwX_QXrnFnnm5ZvU87Z4_RBreurtrDTuQVxFgK2So0lxbnkhIjAR3rg",
+                    cost: 30.0,
+                  })
+                }
               />
             </div>
           </>

@@ -6,7 +6,7 @@ export interface Event {
   place: string;
   date: string;
   time: string;
-  cost: string | number;
+  cost: number;
   source: string;
   imageUrl: string;
 }
@@ -21,7 +21,7 @@ export interface TransformedEvent{
   description: string;
   place: string;
   dateTime: DateTime;
-  cost: string | number;
+  cost: number;
   source: string;
   imageUrl: string;
 }
