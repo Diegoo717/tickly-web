@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Button.module.css";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom"; 
 
 interface Props {
   text: string;
@@ -34,13 +34,17 @@ export const Button = ({
     </button>
   );
 
-  if (onClick && !link) {
+  if (onClick) {
     return buttonElement;
   }
 
-  return (
-    <NavLink className={styles.navLink} to={`/${link}`}>
-      {buttonElement}
-    </NavLink>
-  );
+  if (link) {
+    return (
+      <NavLink className={styles.navLink} to={`/${link}`}>
+        {buttonElement}
+      </NavLink>
+    );
+  }
+
+  return buttonElement;
 };

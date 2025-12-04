@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import styles from "./EventsExplorer.module.css";
 import { EventSearchBar } from "../eventSearchBar/EventSearchBar";
 import { EventCard } from "../eventCard/EventCard";
@@ -10,9 +11,17 @@ import { useEvents } from "../../../hooks/useEvents";
 export const EventsExplorer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
-  const [ticketPricing, setTicketPricing] = useState<any>(null); 
+  const [ticketPricing, setTicketPricing] = useState<any>(null);
+  const [searchParams] = useSearchParams(); 
 
   const { events, loading, error, searchEvents } = useEvents();
+
+  useEffect(() => {
+    const searchQuery = searchParams.get('search');
+    if (searchQuery) {
+      searchEvents(searchQuery);
+    }
+  }, [searchParams]);
 
   const handleSearch = async (description: string) => {
     await searchEvents(description);
