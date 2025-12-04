@@ -16,7 +16,7 @@ export const MyTickets = () => {
         description="Your complete event journey, beautifully organized in one place."
         keywords="my tickets, event tickets, ticket management, upcoming events, purchased tickets, event collection"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="my-tickets"/>
       <MyTicketsContent />
       <Footer />
     </>

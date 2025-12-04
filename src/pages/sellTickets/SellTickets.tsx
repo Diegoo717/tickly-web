@@ -16,7 +16,7 @@ export const SellTickets = () => {
         description="Turn your event into a sold-out success. List now, sell faster."
         keywords="sell tickets, event organizer, list events, sell concert tickets, event management"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="sell-tickets"/>
       <SellTicketsForm />
       <Footer />
     </>

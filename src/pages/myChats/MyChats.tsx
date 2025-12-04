@@ -16,7 +16,7 @@ export const MyChats = () => {
         description="Connect with other attendees and discuss your upcoming events."
         keywords="chat rooms, event chat, tickly chat, messaging, event community"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="my-chats"/>
       <MyChatsContent />
       <Footer />
     </>

@@ -16,7 +16,7 @@ export const Register = () => {
         description="Join thousands discovering epic events. Sign up free in seconds."
         keywords="register, sign up, create account, join tickly, new account"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="register"/>
       <SignUpForm />
       <Footer />
     </>

@@ -2,10 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styles from "./NavBar.module.css";
 import { Button } from '../../buttons/Button';
-import { useNavigate, NavLink } from "react-router";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../../../../contexts/AuthContext";
 
-export const AuthenticatedNavBar = () => {
+interface AuthenticatedNavBarProps {
+  activePage?: string;
+}
+
+export const AuthenticatedNavBar = ({ activePage = "" }: AuthenticatedNavBarProps) => {
   const { user, signOut } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, right: 0, width: 0 });
@@ -47,7 +51,8 @@ export const AuthenticatedNavBar = () => {
     }
   };
 
-  const displayName = user?.user_metadata?.first_name || user?.user_metadata?.name.split(' ')[0]
+  const displayName = user?.user_metadata?.first_name || 
+                      user?.user_metadata?.name?.split(' ')[0] ||
                       user?.email?.split('@')[0] || 
                       'User';
 
@@ -60,10 +65,26 @@ export const AuthenticatedNavBar = () => {
         </NavLink>
       </div>
       <div className={styles.navSecondSection}>
-        <Button text="Events" active={false} link="discover-events"/>
-        <Button text="Sell Tickets" active={false} link="sell-tickets"/>
-        <Button text="My Tickets" active={false} link="my-tickets"/>
-        <Button text="My Chats" active={false} link="my-chats"/>
+        <Button 
+          text="Events" 
+          active={activePage === "discover-events"} 
+          link="discover-events"
+        />
+        <Button 
+          text="Sell Tickets" 
+          active={activePage === "sell-tickets"} 
+          link="sell-tickets"
+        />
+        <Button 
+          text="My Tickets" 
+          active={activePage === "my-tickets"} 
+          link="my-tickets"
+        />
+        <Button 
+          text="My Chats" 
+          active={activePage === "my-chats"} 
+          link="my-chats"
+        />
 
         <div 
           ref={userMenuRef}

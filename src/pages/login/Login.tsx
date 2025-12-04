@@ -42,7 +42,7 @@ export const Login = () => {
         description="Welcome back! Access your tickets and exclusive event perks."
         keywords="login, sign in, account, tickly login, user login"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="login"/>
       <SignInForm />
       <Footer />
     </>

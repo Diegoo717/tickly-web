@@ -16,7 +16,7 @@ export const FindEvents = () => {
         description="Thousands of events at your fingertips. Find your next adventure."
         keywords="find events, discover concerts, sports tickets, festival tickets, entertainment events"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="discover-events"/>
       <EventsExplorer />
       <Footer />
     </>

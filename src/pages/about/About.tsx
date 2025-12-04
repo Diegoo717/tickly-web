@@ -16,7 +16,7 @@ export const About = () => {
         description="Connecting people with moments that matter. Discover our story."
         keywords="about tickly, our mission, company story, ticket platform"
       />
-      <SmartNavBar />
+      <SmartNavBar activePage="about"/>
       <AboutHero />
       <Footer />
     </>

@@ -12,7 +12,7 @@ export const Profile = () => {
         description="Manage your account information and personalize your event recommendations."
         keywords="profile, account settings, user profile, my account, preferences"
       />
-      <SmartNavBar />
+      <SmartNavBar/>
       <ProfileContent />
       <Footer />
     </>
