@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './ChatSidebar.module.css';
+import styles from './ChatSideBar.module.css';
 import type { ChatRoom } from '../myChatsContent/MyChatsContent';
 
 interface ChatSidebarProps {
