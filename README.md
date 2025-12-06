@@ -1,12 +1,16 @@
 <div align="center">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="80" alt="React Logo"/>
+
 # 🎟️ Tickly Web
 
-**Your event assistant: real recommendations and instant tickets**
+**AI-Powered Event Discovery: Find events, buy tickets, connect with attendees**
 
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+🌐 **[Live Demo](https://tickly.diecode.lat/)**
 
 </div>
 
@@ -14,16 +18,62 @@
 
 ## 🎯 About The Project
 
-**Tickly Web** is the frontend interface of the Tickly platform, an innovative application that revolutionizes how you discover and purchase event tickets. Using artificial intelligence, Tickly offers personalized recommendations for real events based on your interests, location, and preferences.
+**Tickly Web** is a modern frontend for AI-powered event discovery and ticket management. Built with React, TypeScript, and Vite, it connects to the [Tickly API](https://tickly-api-production.up.railway.app/api) to deliver intelligent event recommendations, secure Stripe payments, and real-time features.
 
 ### What Makes Tickly Special?
 
-- 🤖 **AI-Powered**: Event recommendations tailored just for you
-- 🎫 **Instant Purchase**: Simple and fast buying process
-- 💬 **Real-Time Chat**: Connect with other event attendees
-- 📱 **Cross-Platform**: Unified web and mobile experience
-- 🔐 **Secure Authentication**: Login with Supabase (Google, Email, etc.)
-- 📧 **Smart Notifications**: Confirmations and reminders via email
+- 🤖 **AI-Powered Search** - Natural language event discovery
+- 💳 **Stripe Payments** - Secure checkout with payment intents
+- 🎫 **Ticket Dashboard** - View QR codes and download PDFs
+- 🔐 **Supabase Auth** - Google OAuth and email login
+- 📱 **Responsive Design** - Optimized for all devices
+- ⚡ **Lightning Fast** - Built with Vite for instant HMR
+
+---
+
+## 🛠️ Tech Stack
+
+**Core:** React 18 · TypeScript · Vite  
+**Styling:** CSS Modules · Responsive Design  
+**State:** Context API · React Router DOM  
+**Services:** Supabase · Stripe · Axios  
+**Backend:** [Tickly API](https://github.com/soydiegomen/tickly-api)
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ · npm or yarn
+
+### Installation
+
+```bash
+# Clone and install
+git clone https://github.com/your-username/tickly-web.git
+cd tickly-web
+npm install
+
+# Configure environment
+cp .env.example .env
+# Edit .env with your credentials
+
+# Start development server
+npm run dev
+```
+
+App runs at `http://localhost:5173`
+
+### Environment Variables
+
+```env
+# Supabase
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+> 💡 Get keys: [Supabase Dashboard](https://supabase.com/dashboard)
 
 ---
 
@@ -31,173 +81,95 @@
 
 ### 🔍 Intelligent Discovery
 
-- AI-powered conversational event search
-- Filters by location, date, category, and price
-- Visual cards with complete event information
-- Up to 5 personalized recommendations per search
+Natural language search powered by Perplexity AI · Visual event cards · Location and date filters
 
 ### 🎟️ Ticket Management
 
-- Personal "My Tickets" dashboard
-- QR code visualization
-- Purchase history
-- PDF ticket downloads
+Personal dashboard · QR code display · PDF downloads · Purchase history via Stripe
 
-### 💬 Social Interaction
+### 🎨 Modern UX
 
-- Exclusive chat rooms per event
-- Only accessible to ticket holders
-- Automatic moderation with chat bot
-- Real-time messaging with WebSockets
-
-### 🎨 User Experience
-
-- Modern and responsive design
-- Smooth and attractive animations
-- Light/Dark theme
-- Optimized for all devices
+Responsive design · Light/Dark theme · Smooth animations · Mobile-first
 
 ---
 
-## 🛠️ Tech Stack
+## 📜 Scripts
 
-### Core
-
-- **[React 18](https://reactjs.org/)** - UI Library
-- **[TypeScript](https://www.typescriptlang.org/)** - Static typing
-- **[Vite](https://vitejs.dev/)** - Build tool and dev server
-
-### Routing & State
-
-- **[React Router DOM](https://reactrouter.com/)** - SPA Navigation
-- **[Context API](https://react.dev/reference/react/useContext)** - Global state management
-
-### Styling
-
-- **CSS Modules** - Locally scoped styles
-- **Responsive Design** - Mobile-first approach
-
-### Communication
-
-- **[Axios](https://axios-http.com/)** - HTTP Client
-- **[Socket.IO Client](https://socket.io/)** - Real-time WebSockets
-
-### Authentication
-
-- **[Supabase](https://supabase.com/)** - Backend as a Service
-- OAuth 2.0 (Google, GitHub)
-
-### Utilities
-
-- **[Resend](https://resend.com/)** - Email delivery
-- **[date-fns](https://date-fns.org/)** - Date handling
-- **[React Hot Toast](https://react-hot-toast.com/)** - Notifications
+```bash
+npm run dev          # Development server
+npm run build        # Production build
+npm run preview      # Preview build
+npm run lint         # ESLint check
+npm run type-check   # TypeScript validation
+```
 
 ---
 
-## 📦 Prerequisites
+## 🔌 API Integration
 
-Before you begin, make sure you have installed:
+Connects to [Tickly API](https://tickly-api-production.up.railway.app) for:
 
-- **Node.js** >= 18.0.0
-- **npm** >= 9.0.0 or **yarn** >= 1.22.0
-- **Git**
+- AI event search via Perplexity
+- Stripe payment processing
+- Ticket generation and QR codes
+- Supabase authentication
 
----
-
-## 🚀 Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/tickly-web.git
-cd tickly-web
-```
-
-### 2. Install dependencies
-
-```bash
-npm install
-# or
-yarn install
-```
-
-### 3. Set up environment variables
-
-Create a `.env` file in the root directory:
-
-```bash
-cp .env.example .env
-```
-
-Edit the `.env` file with your credentials
-
-### 4. Start the development server
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-The application will be available at `http://localhost:5173`
+Full API docs: [Swagger UI](https://tickly-api-production.up.railway.app/api)
 
 ---
 
-## 📜 Available Scripts
+## 📁 Project Structure
 
-```bash
-# Development
-npm run dev          # Start development server
-
-# Build
-npm run build        # Generate production build
-npm run preview      # Preview production build
-
-# Linting & Formatting
-npm run lint         # Run ESLint
-npm run type-check   # Check TypeScript types
-
-# Testing (coming soon)
-npm run test         # Run unit tests
-npm run test:e2e     # Run end-to-end tests
+```
+tickly-web/
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Route pages
+│   ├── context/          # Global state management
+│   ├── hooks/            # Custom React hooks
+│   ├── services/         # API calls and integrations
+│   ├── lib/              # Third-party library configs
+│   ├── router/           # Route definitions
+│   ├── types/            # TypeScript type definitions
+│   ├── utils/            # Helper functions
+│   ├── assets/           # Images, icons, fonts
+│   └── App.tsx           # Main component
+├── public/
+└── .env
 ```
 
 ---
 
 ## 📄 License
 
-© 2025 Tickly. All rights reserved.
-
-This project is a personal portfolio project and is not licensed for public use, modification, or distribution.
+© 2025 Tickly. Personal portfolio project - not licensed for public use.
 
 ---
 
 ## 📞 Contact
 
-**Diego Magaña Álvarez**
+**Diego Magaña Álvarez**  
+_Full-Stack Developer_
 
-soydiegoo71@gmail.com
+soydiegoo71@gmail.com | +52 445 105 9192
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diego-magana-dev)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/soydiegomen)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- [React Documentation](https://react.dev/)
-- [Vite Documentation](https://vitejs.dev/)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [Supabase](https://supabase.com/)
-- [Socket.IO](https://socket.io/)
-- [Resend](https://resend.com/)
+[React](https://react.dev/) · [Vite](https://vitejs.dev/) · [TypeScript](https://www.typescriptlang.org/) · [Supabase](https://supabase.com/) · [Stripe](https://stripe.com/docs)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ and ☕**
+⭐ **Star this project if you find it useful!**
 
-⭐ Don't forget to give the project a star if you liked it! ⭐
+**Tickly** - Discover events intelligently with AI 🎫
+
+Made with ❤️ and ☕
 
 </div>
