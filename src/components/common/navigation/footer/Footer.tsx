@@ -10,7 +10,7 @@ export const Footer = () => {
             <div className={styles.brandHeader}>
               <img
                 className={styles.logoImg}
-                src="public\images\tickly_logo.png"
+                src="/images/tickly_logo.png"
                 alt=""
               />
               <h2 className={styles.brandTitle}>Tickly</h2>

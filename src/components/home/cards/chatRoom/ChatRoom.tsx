@@ -33,7 +33,7 @@ export const ChatRoom = () => {
                 <img
                   alt="User Avatar"
                   className={style.userAvatar}
-                  src="public\icons\user_woman_icon.png"
+                  src="/icons/user_woman_icon.png"
                 />
                 <div>
                   <div className={`${style.message} ${style.messageOther}`}>
@@ -62,7 +62,7 @@ export const ChatRoom = () => {
                 <img
                   alt="User Avatar"
                   className={style.userAvatar}
-                  src="public\icons\user_man_icon.png"
+                  src="/icons/user_man_icon.png"
                 />
               </div>
 
