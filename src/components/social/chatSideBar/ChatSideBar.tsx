@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './ChatSideBar.module.css';
 import type { ChatRoom } from '../myChatsContent/MyChatsContent';
 
 interface ChatSidebarProps {
   chatRooms: ChatRoom[];
-  selectedChatId: number;
-  onSelectChat: (chatId: number) => void;
+  selectedChatId: string | null; 
+  onSelectChat: (chatId: string) => void; 
 }
 
 export const ChatSidebar: React.FC<ChatSidebarProps> = ({ 
@@ -36,43 +36,53 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({
       </div>
 
       <nav className={styles.chatList}>
-        {filteredChats.map((chat) => (
-          <button
-            key={chat.id}
-            className={`${styles.chatItem} ${
-              selectedChatId === chat.id ? styles.chatItemActive : ''
-            } ${chat.isArchived ? styles.chatItemArchived : ''}`}
-            onClick={() => onSelectChat(chat.id)}
-          >
-            <div className={styles.chatAvatar}>
-              <img src={chat.eventImage} alt={chat.eventName} />
-              {chat.isActive && (
-                <span className={styles.onlineIndicator}>
-                  <span className={styles.onlinePing}></span>
-                  <span className={styles.onlineDot}></span>
-                </span>
-              )}
-            </div>
-
-            <div className={styles.chatInfo}>
-              <div className={styles.chatHeader}>
-                <h3 className={styles.chatName}>{chat.eventName}</h3>
-                <span className={styles.chatTime}>{chat.lastMessageTime}</span>
-              </div>
-              <div className={styles.chatFooter}>
-                <p className={`${styles.chatMessage} ${
-                  selectedChatId === chat.id ? styles.chatMessageActive : ''
-                }`}>
-                  {chat.lastMessageSender && `${chat.lastMessageSender}: `}
-                  {chat.lastMessage}
-                </p>
-                {chat.unreadCount > 0 && (
-                  <span className={styles.unreadBadge}>{chat.unreadCount}</span>
+        {filteredChats.length === 0 ? (
+          <div style={{ 
+            padding: '2rem', 
+            textAlign: 'center', 
+            color: '#666' 
+          }}>
+            <p>No chats found</p>
+          </div>
+        ) : (
+          filteredChats.map((chat) => (
+            <button
+              key={chat.id}
+              className={`${styles.chatItem} ${
+                selectedChatId === chat.id ? styles.chatItemActive : ''
+              } ${chat.isArchived ? styles.chatItemArchived : ''}`}
+              onClick={() => onSelectChat(chat.id)}
+            >
+              <div className={styles.chatAvatar}>
+                <img src={chat.eventImage} alt={chat.eventName} />
+                {chat.isActive && (
+                  <span className={styles.onlineIndicator}>
+                    <span className={styles.onlinePing}></span>
+                    <span className={styles.onlineDot}></span>
+                  </span>
                 )}
               </div>
-            </div>
-          </button>
-        ))}
+
+              <div className={styles.chatInfo}>
+                <div className={styles.chatHeader}>
+                  <h3 className={styles.chatName}>{chat.eventName}</h3>
+                  <span className={styles.chatTime}>{chat.lastMessageTime}</span>
+                </div>
+                <div className={styles.chatFooter}>
+                  <p className={`${styles.chatMessage} ${
+                    selectedChatId === chat.id ? styles.chatMessageActive : ''
+                  }`}>
+                    {chat.lastMessageSender && `${chat.lastMessageSender}: `}
+                    {chat.lastMessage}
+                  </p>
+                  {chat.unreadCount > 0 && (
+                    <span className={styles.unreadBadge}>{chat.unreadCount}</span>
+                  )}
+                </div>
+              </div>
+            </button>
+          ))
+        )}
       </nav>
     </aside>
   );
