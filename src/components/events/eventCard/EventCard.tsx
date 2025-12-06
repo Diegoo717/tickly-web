@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./EventCard.module.css";
 import { Button } from "../../common/buttons/Button";
 

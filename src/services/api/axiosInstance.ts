@@ -7,7 +7,7 @@ import axios, {
 import { supabase } from "../../lib/supabaseClient";
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://tickly-api-prod.eba-twbmhd2g.us-east-1.elasticbeanstalk.com",
   timeout: 40000,
   headers: {
     "Content-Type": "application/json",

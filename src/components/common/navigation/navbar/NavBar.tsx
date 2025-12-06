@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./NavBar.module.css";
 import { Button } from '../../buttons/Button';
 import { NavLink } from "react-router-dom";

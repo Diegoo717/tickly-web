@@ -1,7 +1,6 @@
 import apiClient from "./api/axiosInstance";
 import { ENDPOINTS } from "./api/endpoints";
 import {
-  type Event,
   type SearchEventsDTO,
   type TransformedEvent,
 } from "../types/event.types";

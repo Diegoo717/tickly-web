@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './AboutHero.module.css';
 import { Button } from '../common/buttons/Button';
 import '../../App.css'

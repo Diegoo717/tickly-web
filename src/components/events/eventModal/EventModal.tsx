@@ -71,6 +71,7 @@ export const EventModal: React.FC<EventModalProps> = ({
 
   const handleClick = () => {
     navigate('/my-tickets');
+    console.log(successData);
   };
 
   if (!isOpen) return null;

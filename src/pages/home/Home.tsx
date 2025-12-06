@@ -1,4 +1,3 @@
-import React from "react";
 import { Hero } from "../../components/home/sections/hero/Hero";
 import { AIFeature } from "../../components/home/sections/aIFeature/AIFeature";
 import { SocialFeature } from "../../components/home/sections/socialFeature/SocialFeature";

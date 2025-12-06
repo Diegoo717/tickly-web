@@ -1,4 +1,3 @@
-import React from "react";
 import style from './ChatRoom.module.css'
 
 export const ChatRoom = () => {

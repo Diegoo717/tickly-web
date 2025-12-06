@@ -1,6 +1,4 @@
-import React from "react";
 import styles from "./Hero.module.css";
-import { Button } from "../../../common/buttons/Button";
 import { CarouselCard } from "../../cards/carouselCard/CarouselCard";
 import SplitText from "../../../common/splitText/SplitText";
 import { EventSearchBar } from '../../../events/eventSearchBar/EventSearchBar';

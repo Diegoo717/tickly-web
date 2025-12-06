@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./SocialFeature.module.css";
 import { ChatRoom } from '../../cards/chatRoom/ChatRoom';
 

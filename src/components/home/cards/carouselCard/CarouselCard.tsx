@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './CarouselCard.module.css'
 
 interface Props{

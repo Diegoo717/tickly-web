@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ProfileContent.module.css";
 import "../../App.css";
 import { useAuth } from "@/contexts/AuthContext";

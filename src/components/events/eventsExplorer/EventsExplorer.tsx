@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import styles from "./EventsExplorer.module.css";
 import { EventSearchBar } from "../eventSearchBar/EventSearchBar";

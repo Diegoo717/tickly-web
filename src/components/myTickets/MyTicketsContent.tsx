@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./MyTicketsContent.module.css";
 import { MyTicketCard } from "./MyTicketCard";
 import { useTickets } from "../../hooks/useTickets";

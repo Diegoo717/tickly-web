@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './SettingsContent.module.css';
 import '../../App.css'
 
